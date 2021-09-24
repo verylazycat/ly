@@ -7,6 +7,9 @@
 
 #include <sys/utsname.h>
 #include <sys/sysinfo.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <unistd.h>
 
 class Accounting {
 private:
@@ -14,7 +17,8 @@ private:
     struct sysinfo info;
 public:
     Accounting();
-    void check();
+    void BaseInfo();
+    void CheckUmask();
 };
 
 #endif //LY_ACCOUNTING_H

@@ -3,6 +3,7 @@
 #include "Accounting.h"
 int main() {
     Accounting accounting;
-    accounting.check();
+    accounting.BaseInfo();
+    accounting.CheckUmask();
     return 0;
 }
