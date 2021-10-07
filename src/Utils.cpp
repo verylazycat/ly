@@ -15,3 +15,18 @@ char *Utils::GetNameFromPass(char *ps) {
     }
     return res;
 }
+
+char *Utils::GetPassFromPass(char *ps) {
+    char  *res = (char *) malloc(2);
+    for (int i = 0; i < strlen(ps); ++i) {
+        if (ps[i] != ':')
+            continue;
+        else{
+            i++;
+            res[0] = ps[i];
+            res[1] = '\0';
+            break;
+        }
+    }
+    return res;
+}

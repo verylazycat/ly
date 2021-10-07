@@ -9,6 +9,7 @@
 class Utils {
 public:
     static char *GetNameFromPass(char *ps);
+    static char *GetPassFromPass(char  *ps);
 };
 
 

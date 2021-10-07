@@ -13,7 +13,10 @@
 #include <fcntl.h>
 #include <string.h>
 #include <unordered_set>
+#include <spdlog/spdlog.h>
+#include <spdlog/sinks/basic_file_sink.h>
 #include "Utils.h"
+#include "config.h"
 class Accounting {
 private:
     struct utsname sysuname;
@@ -22,7 +25,6 @@ public:
     Accounting();
     void BaseInfo();
     void CheckUmask();
-    void CheckIsOnlyUser();
 };
 
 #endif //LY_ACCOUNTING_H
