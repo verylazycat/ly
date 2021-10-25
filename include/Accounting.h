@@ -24,7 +24,6 @@ private:
 public:
     Accounting();
     void BaseInfo();
-    void CheckUmask();
 };
 
 #endif //LY_ACCOUNTING_H

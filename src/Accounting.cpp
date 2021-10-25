@@ -61,34 +61,3 @@ void Accounting::BaseInfo() {
         spdlog::critical("Log init failed: {}", ex.what());
     }
 }
-void Accounting::CheckUmask(){
-    auto logger = spdlog::basic_logger_mt("CheckUmask_logger", "logs/basic-log.txt");
-    uid_t current_uid = getuid();
-    mode_t mode = umask(mode);
-    mode_t safe_common_mode = 002;
-    mode_t  safe_super_mode = 0022;
-    spdlog::info("curent user uid:{}",current_uid);
-    spdlog::info("curent umask(18 hexadecimal):{}",mode);
-     //common users
-    if(current_uid != 0){
-        if(mode == safe_common_mode){
-            spdlog::info("Umask for common users is secure");
-            logger->info("Umask for common users is secure");
-        }
-        else{
-            spdlog::warn("Umask for common users is not secure");
-            logger->warn("Umask for common users is not secure");
-        }
-    }
-    //root user
-    else{
-        if(mode == safe_super_mode){
-            spdlog::info("Umask for super user is secure");
-            logger->info("Umask for super user is secure");
-        }
-        else{
-            spdlog::warn("Umask for super user is not secure");
-            logger->warn("Umask for super user is not secure");
-        }
-    }
-}

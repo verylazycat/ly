@@ -14,5 +14,6 @@ class Auth{
 public:
     void CheckIsOnlyUser();
     void CheckNoPwUser();
+    void CheckUmask();
 };
 #endif //LY_AUTH_H
