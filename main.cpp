@@ -2,14 +2,26 @@
 #include "Accounting.h"
 #include "Auth.h"
 #include "Boot.h"
-int main() {
-    // Accounting accounting;
-    // accounting.BaseInfo();
-    // Auth auth;
-    // auth.CheckIsOnlyUser();
-    // auth.CheckNoPwUser();
-    // auth.CheckUmask();
+#include <openssl/md5.h>
+#include <iostream>
+#include <fstream> 
+#include <iomanip>
+#include <string>
+using namespace std;
+#define MAXDATABUFF 1024
+#define MD5LENTH 16
+int main(int argc ,char **argv) {
+    Accounting accounting;
+    Auth auth;
     Boot boot;
+
+    accounting.BaseInfo();
+    
+    auth.CheckIsOnlyUser();
+    auth.CheckNoPwUser();
+    auth.CheckUmask();
+    
     boot.CheckGrubBootLoader();
+    
     return 0;
 }

@@ -8,6 +8,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
+#include "Utils.h"
 class Boot{
 public:
     // GRUB boot loader

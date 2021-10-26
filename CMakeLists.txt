@@ -1,7 +1,8 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
 project(Ly)
-
 set(CMAKE_CXX_STANDARD 11)
 include_directories(include)
 AUX_SOURCE_DIRECTORY(src DIR_SRCS)
-add_executable(Ly main.cpp src/Accounting.cpp include/Accounting.h include/config.h src/Utils.cpp include/Utils.h include/Auth.h src/Auth.cpp include/Boot.h src/Boot.cpp)
+find_package(OpenSSL REQUIRED)
+ADD_EXECUTABLE(${PROJECT_NAME} main.cpp ${DIR_SRCS})
+target_link_libraries(${PROJECT_NAME} OpenSSL::SSL)
