@@ -27,3 +27,11 @@ void Boot::CheckGrubBootLoader(){
     logger->info("grub.cfg is security");;
     spdlog::info("grub.cfg is security");
 }
+/*
+验证是否加密grub以及是否hash，不是明文写入
+https://blog.51cto.com/chenxiaojian/1619540
+https://blog.51cto.com/yangzhiming/835281
+*/
+void Boot::CheckAuthBoot(){
+    
+}

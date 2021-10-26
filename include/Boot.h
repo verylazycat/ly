@@ -13,5 +13,6 @@ class Boot{
 public:
     // GRUB boot loader
     void CheckGrubBootLoader();
+    void CheckAuthBoot();
 };
 #endif

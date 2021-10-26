@@ -68,3 +68,23 @@ string Utils::dec2hex(int x){
     transform(s_temp.begin(),s_temp.end(),s_temp.begin(),::tolower);
     return s_temp;
 }
+bool Utils::KMPsearch(const string &text,const string &pattern){
+    int tLen = text.size();
+	int pLen = pattern.size();
+	int i = 0;
+	int j = 0;
+	while (i < tLen && j < pLen){
+        if (text[i] == pattern[j]){
+			i++;
+			j++;
+		}else{
+			i = i - j + 1;
+			j = 0;
+		}
+	}
+	if (j == pLen)
+		return true;
+	else
+		return false;
+}
+

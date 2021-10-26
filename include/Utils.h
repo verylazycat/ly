@@ -24,6 +24,7 @@ public:
     static char *GetPassFromPass(char  *ps);
     static string CalculateMD5(const string &filePath);
     static string dec2hex(int x);
+    static bool KMPsearch(const string &source,const string &target);
 };
 
 
