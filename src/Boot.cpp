@@ -5,7 +5,6 @@
 
 void Boot::CheckGrubBootLoader(){
     const string grub_cfg_md5 = "151ae9b399fc47d6cf88de754756d";
-    const string config_path = "/boot/grub/grub.cfg";
     auto logger = spdlog::basic_logger_mt("CheckGrubBootLoader_logger", "logs/basic-log.txt");
     int fd = open("/boot/grub/grub.cfg",O_RDONLY);
     if (fd == -1)
@@ -33,5 +32,35 @@ https://blog.51cto.com/chenxiaojian/1619540
 https://blog.51cto.com/yangzhiming/835281
 */
 void Boot::CheckAuthBoot(){
-    
+    auto logger = spdlog::basic_logger_mt("CheckAuthBoot_logger", "logs/basic-log.txt");
+    bool pwflag = false;
+    bool md5pwflag = false;
+    ifstream in(config_path);
+    string line;
+    if(in){
+        while (getline(in,line)){
+            if (Utils::KMPsearch(line,"password")){
+                pwflag = !pwflag;
+            }
+            if (Utils::KMPsearch(line,"password  --md5")){
+                md5pwflag = !md5pwflag;
+            }
+        } 
+    }else{
+        logger->critical("cat't open /boot/grub/grub.cfg");
+        spdlog::critical("cat't open /boot/grub/grub.cfg");
+        return;
+    }
+    if (pwflag && md5pwflag){
+        logger->info("Grub is encrypted and stored securely");
+        spdlog::info("Grub is encrypted and stored securely");
+    }
+    else if(pwflag){
+        logger->warn("Grub is encrypted but not stored securely");
+        spdlog::warn("Grub is encrypted but not stored securely");
+    }
+    else{
+        logger->critical("Grub unencrypted");
+        spdlog::critical("Grub unencrypted");
+    }
 }

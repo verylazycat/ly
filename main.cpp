@@ -22,6 +22,6 @@ int main(int argc ,char **argv) {
     auth.CheckUmask();
     
     boot.CheckGrubBootLoader();
-
+    boot.CheckAuthBoot();
     return 0;
 }

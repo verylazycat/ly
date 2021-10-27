@@ -11,6 +11,7 @@
 #include "Utils.h"
 class Boot{
 public:
+    const string config_path = "/boot/grub/grub.cfg";
     // GRUB boot loader
     void CheckGrubBootLoader();
     void CheckAuthBoot();
