@@ -12,8 +12,10 @@
 class Boot{
 public:
     const string config_path = "/boot/grub/grub.cfg";
+    const string crontab = "/etc/crontab";
     // GRUB boot loader
     void CheckGrubBootLoader();
     void CheckAuthBoot();
+    void CheckCron();
 };
 #endif

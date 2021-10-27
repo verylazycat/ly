@@ -64,3 +64,25 @@ void Boot::CheckAuthBoot(){
         spdlog::critical("Grub unencrypted");
     }
 }
+void Boot::CheckCron(){
+    auto logger = spdlog::basic_logger_mt("CheckCron_logger", "logs/basic-log.txt");
+    ifstream in(crontab);
+    string line;
+    if (in){
+        while (getline(in,line)){
+            if (line.empty())
+                continue;
+            if (line.at(0) == '#')
+                continue;
+            else{
+                logger->warn(line);
+                spdlog::warn(line);
+            }
+        }
+        
+    }else{
+        logger->critical("cat't open /etc/crontab");
+        spdlog::critical("cat't open /etc/crontab");
+    }
+    
+}

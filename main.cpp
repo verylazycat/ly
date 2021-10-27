@@ -23,5 +23,6 @@ int main(int argc ,char **argv) {
     
     boot.CheckGrubBootLoader();
     boot.CheckAuthBoot();
+    boot.CheckCron();
     return 0;
 }
