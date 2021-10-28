@@ -88,3 +88,23 @@ bool Utils::KMPsearch(const string &text,const string &pattern){
 		return false;
 }
 
+void Utils::executeCMD(const char *cmd,char *res){
+    auto logger = spdlog::basic_logger_mt("executeCMD_logger", "logs/basic-log.txt");
+    char buf_ps[1024];   
+    char ps[1024]={0};   
+    FILE *ptr;   
+    strcpy(ps, cmd);   
+    if((ptr=popen(ps, "r"))!=NULL){   
+        while(fgets(buf_ps, 1024, ptr)!=NULL){   
+           strcat(res, buf_ps);   
+           if(strlen(res)>1024)   
+               break;   
+        }   
+        pclose(ptr);   
+        ptr = NULL;   
+    }   
+    else{   
+        spdlog::critical("popen {} error",ps);
+        logger->critical("popen {} error",ps);
+    }   
+}

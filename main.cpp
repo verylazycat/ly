@@ -2,6 +2,7 @@
 #include "Accounting.h"
 #include "Auth.h"
 #include "Boot.h"
+#include "Crypto.h"
 #include <openssl/md5.h>
 #include <iostream>
 #include <fstream> 
@@ -14,7 +15,7 @@ int main(int argc ,char **argv) {
     Accounting accounting;
     Auth auth;
     Boot boot;
-
+    Crypto crypto;
     accounting.BaseInfo();
     
     auth.CheckIsOnlyUser();
@@ -24,5 +25,7 @@ int main(int argc ,char **argv) {
     boot.CheckGrubBootLoader();
     boot.CheckAuthBoot();
     boot.CheckCron();
+
+    crypto.CheckCerts();
     return 0;
 }
