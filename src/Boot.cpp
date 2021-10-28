@@ -79,10 +79,8 @@ void Boot::CheckCron(){
                 spdlog::warn(line);
             }
         }
-        
     }else{
         logger->critical("cat't open /etc/crontab");
         spdlog::critical("cat't open /etc/crontab");
     }
-    
 }
