@@ -106,5 +106,5 @@ void Utils::executeCMD(const char *cmd,char *res){
     else{   
         spdlog::critical("popen {} error",ps);
         logger->critical("popen {} error",ps);
-    }   
+    }
 }
