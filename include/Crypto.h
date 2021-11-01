@@ -4,6 +4,8 @@
 #ifndef LY_CRYPTO_H
 #define LY_CRYPTO_H
 #include <ctime>
+#include <dirent.h>
+#include <unistd.h>
 #include <spdlog/spdlog.h>
 #include <spdlog/sinks/basic_file_sink.h>
 #include "Utils.h"
