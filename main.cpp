@@ -3,6 +3,7 @@
 #include "Auth.h"
 #include "Boot.h"
 #include "Crypto.h"
+#include "Database.h"
 #include <openssl/md5.h>
 #include <iostream>
 #include <fstream> 
@@ -27,5 +28,7 @@ int main(int argc ,char **argv) {
     boot.CheckCron();
 
     crypto.CheckCerts();
+    Database database;
+    database.DetectMysql();
     return 0;
 }
