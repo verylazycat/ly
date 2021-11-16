@@ -7,6 +7,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
+#include <mysql/mysql.h>
 #include <spdlog/spdlog.h>
 #include <spdlog/sinks/basic_file_sink.h>
 
@@ -15,6 +16,7 @@ private:
     const char *MysqlConf = "/etc/mysql";
 public:
     bool DetectMysql(void);
+    void CheckNullPass(void);
 };
 
 

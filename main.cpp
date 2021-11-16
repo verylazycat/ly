@@ -30,5 +30,6 @@ int main(int argc ,char **argv) {
     crypto.CheckCerts();
     Database database;
     database.DetectMysql();
+    database.CheckNullPass();
     return 0;
 }
