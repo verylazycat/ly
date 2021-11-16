@@ -1,3 +1,0 @@
-/home/admin233/Documents/ly/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/admin233/Documents/ly/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/admin233/Documents/ly/cmake-build-debug/CMakeFiles/Ly.dir

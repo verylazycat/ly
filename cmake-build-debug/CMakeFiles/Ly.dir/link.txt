@@ -1,1 +1,0 @@
-/usr/bin/c++ -g -rdynamic CMakeFiles/Ly.dir/main.cpp.o CMakeFiles/Ly.dir/src/Accounting.cpp.o CMakeFiles/Ly.dir/src/Auth.cpp.o CMakeFiles/Ly.dir/src/Boot.cpp.o CMakeFiles/Ly.dir/src/Containers.cpp.o CMakeFiles/Ly.dir/src/Crypto.cpp.o CMakeFiles/Ly.dir/src/Utils.cpp.o -o Ly  /usr/lib/x86_64-linux-gnu/libssl.so /usr/lib/x86_64-linux-gnu/libcrypto.so 
