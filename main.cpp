@@ -29,7 +29,9 @@ int main(int argc ,char **argv) {
 
     crypto.CheckCerts();
     Database database;
-    database.DetectMysql();
     database.CheckNullPass();
+    database.CheckDangerousCMD();
+    database.CheckRedisPass();
+    database.CheckIntranetAccess();
     return 0;
 }
