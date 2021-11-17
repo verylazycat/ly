@@ -4,6 +4,7 @@
 #include "Boot.h"
 #include "Crypto.h"
 #include "Database.h"
+#include "Printing.h"
 #include <openssl/md5.h>
 #include <iostream>
 #include <fstream> 
@@ -33,5 +34,8 @@ int main(int argc ,char **argv) {
     database.CheckDangerousCMD();
     database.CheckRedisPass();
     database.CheckIntranetAccess();
+
+    Printing printing;
+    printing.CheckCUPSPermissions();
     return 0;
 }
