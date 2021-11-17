@@ -17,6 +17,7 @@ private:
 public:
     bool DetectMysql(void);
     void CheckNullPass(void);
+    //TODO:https://blog.csdn.net/lihuaichen/article/details/80582820
 };
 
 
