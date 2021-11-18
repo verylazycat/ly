@@ -9,8 +9,11 @@
 #include "Utils.h"
 using namespace std;
 class Printing {
+private:
+    string CUPSConfig = "/etc/cups/cupsd.conf";
 public:
     void CheckCUPSPermissions(void);
+    void CheckCUPSRemoteAccess(void);
 };
 
 

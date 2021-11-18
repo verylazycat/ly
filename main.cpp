@@ -37,5 +37,6 @@ int main(int argc ,char **argv) {
 
     Printing printing;
     printing.CheckCUPSPermissions();
+    printing.CheckCUPSRemoteAccess();
     return 0;
 }

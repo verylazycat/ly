@@ -18,3 +18,44 @@ void Printing::CheckCUPSPermissions(void){
     logger->critical("CUPS permission not security");
     return;
 }
+// Listen localhost:631
+// WebInterface No
+void Printing::CheckCUPSRemoteAccess(){
+    auto logger = spdlog::basic_logger_mt("CheckCUPSRemoteAccess_logger", "logs/basic-log.txt");
+    bool listen = false;
+    bool webinterface = false;
+    ifstream in(this->CUPSConfig);
+    string line;
+    if (in){
+        while (getline(in,line)){
+            if (Utils::KMPsearch(line,"Listen localhost:631")){
+                listen = !listen;
+                continue;
+            }
+            else if(Utils::KMPsearch(line,"WebInterface No")){
+                webinterface = !webinterface;
+                continue;
+            }
+            if (listen && webinterface){
+                spdlog::info("Remote has been disabled.");
+                logger->info("Remote has been disabled.");
+                return;
+            }
+        }
+    }
+    if (listen){
+        spdlog::critical("Unsafe configuration:{WebInterface No}");
+        logger->critical("Unsafe configuration:{WebInterface No}");
+        return;
+    }
+    else if (webinterface){
+        spdlog::critical("Unsafe configuration:{Listen localhost:631}");
+        logger->critical("Unsafe configuration:{Listen localhost:631}");
+        return;
+    }
+    else{
+        spdlog::critical("Remote accessibility");
+        logger->critical("Remote accessibility");
+        return;
+    }
+}
