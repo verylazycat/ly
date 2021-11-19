@@ -7,7 +7,12 @@
     "config_template_dir": "config",
     "route": {
         "docs": {
-            "/doc1/": "docs/doc1"
+            "/LY-core/": "docs/LY-core",
+            "/LY-center/": "docs/LY-center",
+            "/LY-control/": "docs/LY-control",
+            "/LY-frame/": "docs/LY-frame",
+            "/LY-fronted/": "docs/LY-fronted",
+            "/LY-about/": "docs/LY-about"
         },
         "pages": {
             "/": "pages/index"

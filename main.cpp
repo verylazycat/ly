@@ -5,6 +5,7 @@
 #include "Crypto.h"
 #include "Database.h"
 #include "Printing.h"
+#include "Logging.h"
 #include <openssl/md5.h>
 #include <iostream>
 #include <fstream> 
@@ -38,5 +39,8 @@ int main(int argc ,char **argv) {
     Printing printing;
     printing.CheckCUPSPermissions();
     printing.CheckCUPSRemoteAccess();
+
+    Logging logging;
+    logging.AuditConfiguration();
     return 0;
 }
