@@ -19,6 +19,7 @@ public:
 // https://blog.csdn.net/xiayun1995/article/details/83962934
     bool CheckLogConfFile(void);
     void AuditConfiguration(void);
+    void AuditLog(void);
 };
 
 #endif //LY_LOGGING_H

@@ -6,6 +6,7 @@
 #include "Database.h"
 #include "Printing.h"
 #include "Logging.h"
+#include "Nameservers.h"
 #include <openssl/md5.h>
 #include <iostream>
 #include <fstream> 
@@ -42,5 +43,8 @@ int main(int argc ,char **argv) {
 
     Logging logging;
     logging.AuditConfiguration();
+
+    Nameservers nameservers;
+    nameservers.CheckDNS();
     return 0;
 }

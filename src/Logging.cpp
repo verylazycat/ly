@@ -50,3 +50,7 @@ void Logging::AuditConfiguration(void){
     }
     return;
 }
+//审计日志
+void Logging::AuditLog(void){
+    
+}
