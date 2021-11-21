@@ -1,0 +1,7 @@
+items:
+-   label: 部署
+    file: README.md
+-   label: 文档部署
+    file: document.md
+-   label: 核心部署
+    file: core.md

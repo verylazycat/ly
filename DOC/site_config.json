@@ -12,7 +12,8 @@
             "/LY-control/": "docs/LY-control",
             "/LY-frame/": "docs/LY-frame",
             "/LY-fronted/": "docs/LY-fronted",
-            "/LY-about/": "docs/LY-about"
+            "/LY-about/": "docs/LY-about",
+            "/LY-deployment/": "docs/LY-deployment"
         },
         "pages": {
             "/": "pages/index"
