@@ -7,6 +7,7 @@
 #include "Printing.h"
 #include "Logging.h"
 #include "Nameservers.h"
+#include "SSH.h"
 #include <openssl/md5.h>
 #include <iostream>
 #include <fstream> 
@@ -46,5 +47,8 @@ int main(int argc ,char **argv) {
 
     Nameservers nameservers;
     nameservers.CheckDNS();
+
+    SSH ssh;
+    ssh.AuditSSHConfig();
     return 0;
 }

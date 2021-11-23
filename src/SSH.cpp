@@ -12,6 +12,7 @@ bool SSH::CheckSSHConfig(void){
     close(fd);
     return true;
 }
+// https://blog.csdn.net/samginshen/article/details/104852042
 void SSH::AuditSSHConfig(void){
     auto logger = spdlog::basic_logger_mt("AuditSSHConfig_logger", "logs/basic-log.txt");
     if (!this->CheckSSHConfig()){
@@ -19,8 +20,42 @@ void SSH::AuditSSHConfig(void){
         logger->critical("ssh_config does not exist!");
         return;
     }
-    //TODO:文件权限
-    //TODO:安全配置
-    // https://blog.csdn.net/samginshen/article/details/104852042
-    
+    char res[20];
+    const char *cmd  = "ls  -la /etc/ssh/ssh_config | awk '{print $1}'";
+    Utils::executeCMD(cmd,res);
+    if (Utils::KMPsearch(res,"-rw-r--r--")){
+        spdlog::info("SSH profile permission security:{}",res);
+        logger->info("SSH profile permission security:{}",res);
+    }
+    else{
+        spdlog::critical("SSH profile permission not security:{}",res);
+        logger->critical("SSH profile permission not security:{}",res);
+    }
+    // PasswordAuthentication
+    bool PasswordAuthentication = false;
+    ifstream in(this->sshconfig);
+    string line;
+    if (in){
+        while (getline(in,line)){
+            // #   PasswordAuthentication
+            if (Utils::KMPsearch(line,"#   PasswordAuthentication")
+               || Utils::KMPsearch(line,"PasswordAuthentication no")){
+                continue;
+            }
+            else if (Utils::KMPsearch(line,"PasswordAuthentication yes")){
+                PasswordAuthentication = true;
+                continue;
+            }
+            //todo:其他校验写这里...
+        }
+    }
+    if (PasswordAuthentication){
+        spdlog::info("PasswordAuthentication is ok");
+        logger->info("PasswordAuthentication is ok");
+    }
+    else{
+        spdlog::critical("PasswordAuthentication is unsafe");
+        logger->critical("PasswordAuthentication is unsafe");
+    }
+    //....
 }
