@@ -8,6 +8,7 @@
 #include "Logging.h"
 #include "Nameservers.h"
 #include "SSH.h"
+#include "Tools.h"
 #include <openssl/md5.h>
 #include <iostream>
 #include <fstream> 
@@ -50,5 +51,8 @@ int main(int argc ,char **argv) {
 
     SSH ssh;
     ssh.AuditSSHConfig();
+
+    Tools tools;
+    tools.CheckFailBanConfig();
     return 0;
 }
