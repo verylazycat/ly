@@ -9,6 +9,7 @@
 #include "Nameservers.h"
 #include "SSH.h"
 #include "Tools.h"
+#include "Processes.h"
 #include <openssl/md5.h>
 #include <iostream>
 #include <fstream> 
@@ -54,5 +55,8 @@ int main(int argc ,char **argv) {
 
     Tools tools;
     tools.CheckFailBanConfig();
+
+    Processes processes;
+    processes.RetrievingZombieProcesses();
     return 0;
 }
