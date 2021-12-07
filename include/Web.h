@@ -14,6 +14,7 @@ private:
 public:
     bool CheckNginxConfig(void);
     void CheckNginxSSL(void);
+    void CheckNginxLog(void);
 };
 
 

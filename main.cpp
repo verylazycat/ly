@@ -62,5 +62,6 @@ int main(int argc ,char **argv) {
 
     Web web;
     web.CheckNginxSSL();
+    web.CheckNginxLog();
     return 0;
 }
