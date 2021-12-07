@@ -10,6 +10,7 @@
 #include "SSH.h"
 #include "Tools.h"
 #include "Processes.h"
+#include "Web.h"
 #include <openssl/md5.h>
 #include <iostream>
 #include <fstream> 
@@ -58,5 +59,8 @@ int main(int argc ,char **argv) {
 
     Processes processes;
     processes.RetrievingZombieProcesses();
+
+    Web web;
+    web.CheckNginxSSL();
     return 0;
 }
