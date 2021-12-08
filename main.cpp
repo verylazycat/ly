@@ -11,6 +11,7 @@
 #include "Tools.h"
 #include "Processes.h"
 #include "Web.h"
+#include "Malware.h"
 #include <openssl/md5.h>
 #include <iostream>
 #include <fstream> 
@@ -63,5 +64,9 @@ int main(int argc ,char **argv) {
     Web web;
     web.CheckNginxSSL();
     web.CheckNginxLog();
+
+    Malware malware;
+    malware.UpdateDataBase();
+    malware.BinScan();
     return 0;
 }
