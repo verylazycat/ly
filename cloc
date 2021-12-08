@@ -2,24 +2,24 @@
 classified 157 filesDuplicate file check 157 files (124 known unique)Unique:      100 files                                               129 unique files.                              
 Counting:  100      49 files ignored.
 
-github.com/AlDanial/cloc v 1.82  T=0.07 s (1638.3 files/s, 141392.4 lines/s)
+github.com/AlDanial/cloc v 1.82  T=0.05 s (2477.0 files/s, 214286.7 lines/s)
 -------------------------------------------------------------------------------
 Language                     files          blank        comment           code
 -------------------------------------------------------------------------------
 HTML                            12            466              0           1896
 CSS                              6             93             80           1615
-C++                             18            155            159           1498
+C++                             18            156            161           1515
 JavaScript                       9             64             69            831
 C                                1            114             50            507
 make                             1            197             91            370
 CMake                            9             59             26            354
-C/C++ Header                    18             43             65            287
+C/C++ Header                    18             43             65            290
 JSON                            18              0              0            247
 Markdown                         7             79              0            168
 XML                              1              0              0             57
 YAML                             2              0              0             10
-SVG                              8              0              0              8
 Bourne Shell                     2              0              0              8
+SVG                              8              0              0              8
 -------------------------------------------------------------------------------
-SUM:                           112           1270            540           7856
+SUM:                           112           1271            542           7876
 -------------------------------------------------------------------------------

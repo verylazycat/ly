@@ -11,10 +11,13 @@ using namespace std;
 class Kernel {
 private:
     string cpuinfo = "/proc/cpuinfo";
+    string sysctl = "/etc/sysctl.conf";
 public:
     bool CheckCPUINIFO(void);
+    bool CheckSYSCTL(void);
     void CheckPAE(void);
     void CheckCoreDumpOK(void);
+    void CheckSysCtlValue(void);
 };
 
 

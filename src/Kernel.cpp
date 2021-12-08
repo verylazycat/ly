@@ -14,6 +14,15 @@ bool Kernel::CheckCPUINIFO(void){
     return true;
 }
 
+bool Kernel::CheckSYSCTL(void){
+    int fd = open(this->sysctl.c_str(),O_RDONLY);
+    if (fd == 0){
+        close(fd);
+        return false;
+    }
+    close(fd);
+    return true;
+}
 // https://blog.csdn.net/ohhmygod/article/details/7596341
 // https://askubuntu.com/questions/128396/how-can-i-tell-if-a-machine-has-pae
 void Kernel::CheckPAE(void){
@@ -64,4 +73,15 @@ void Kernel::CheckCoreDumpOK(void){
         logger->critical("Core dump is  started");
         return;
     }
+}
+
+void Kernel::CheckSysCtlValue(void){
+    auto logger = spdlog::basic_logger_mt("CheckSysCtlValue_logger", "logs/basic-log.txt");
+    if (!CheckSYSCTL()){
+        spdlog::critical("Sysctl System file is lost");
+        logger->critical("Sysctl System file is lost");
+        return;
+    }
+    // https://developer.aliyun.com/article/700149
+    //todo:学位完成
 }
