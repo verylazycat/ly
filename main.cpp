@@ -13,6 +13,7 @@
 #include "Web.h"
 #include "Malware.h"
 #include "Kernel.h"
+#include "Networking.h"
 #include <openssl/md5.h>
 #include <iostream>
 #include <fstream> 
@@ -73,5 +74,10 @@ int main(int argc ,char **argv) {
     Kernel kernel;
     kernel.CheckPAE();
     kernel.CheckCoreDumpOK();
+
+    NetWorking netWorking;
+    netWorking.HostsParsing();
+    netWorking.NicStatus();
+    netWorking.ss();
     return 0;
 }
