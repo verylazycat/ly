@@ -79,5 +79,6 @@ int main(int argc ,char **argv) {
     netWorking.HostsParsing();
     netWorking.NicStatus();
     netWorking.ss();
+    netWorking.arp();
     return 0;
 }

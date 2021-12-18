@@ -2,17 +2,17 @@
 classified 159 filesDuplicate file check 159 files (126 known unique)Unique:      100 files                                               131 unique files.                              
 Counting:  100      49 files ignored.
 
-github.com/AlDanial/cloc v 1.82  T=0.13 s (872.0 files/s, 74809.0 lines/s)
+github.com/AlDanial/cloc v 1.82  T=0.08 s (1359.0 files/s, 116722.0 lines/s)
 -------------------------------------------------------------------------------
 Language                     files          blank        comment           code
 -------------------------------------------------------------------------------
 HTML                            12            466              0           1896
 CSS                              6             93             80           1615
-C++                             19            158            178           1603
+C++                             19            158            178           1613
 JavaScript                       9             64             69            831
 C                                1            114             50            507
 make                             1            206             94            388
-C/C++ Header                    19             45             71            305
+C/C++ Header                    19             45             71            306
 CMake                            9             59             26            285
 JSON                            18              0              0            247
 Markdown                         7             79              0            168
@@ -21,5 +21,5 @@ YAML                             2              0              0             10
 Bourne Shell                     2              0              0              8
 SVG                              8              0              0              8
 -------------------------------------------------------------------------------
-SUM:                           114           1284            568           7928
+SUM:                           114           1284            568           7939
 -------------------------------------------------------------------------------

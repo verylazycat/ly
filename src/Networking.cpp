@@ -99,3 +99,12 @@ void NetWorking::ss(void){
     //todo:more state ....https://www.cnblogs.com/sztom/p/10810508.html
     return;
 };
+void NetWorking::arp(){
+    auto logger = spdlog::basic_logger_mt("arp_logger", "logs/basic-log.txt");
+    const char *cmd = "arp -vn";
+    char res[2048];
+    bzero(res,sizeof(res));
+    Utils::executeCMD(cmd,res);
+    spdlog::info("arp-info:{}\n",res);
+    logger->info("arp-info:{}\n",res);
+}

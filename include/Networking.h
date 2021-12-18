@@ -18,6 +18,7 @@ public:
     void NicStatus(void);
     // https://www.cnblogs.com/sztom/p/10810508.html
     void ss(void);
+    void arp(void);
 };
 
 #endif //LY_NETWORKING_H
