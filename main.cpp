@@ -14,6 +14,7 @@
 #include "Malware.h"
 #include "Kernel.h"
 #include "Networking.h"
+#include "FileIntegrity.h"
 #include <openssl/md5.h>
 #include <iostream>
 #include <fstream> 
@@ -80,5 +81,9 @@ int main(int argc ,char **argv) {
     netWorking.NicStatus();
     netWorking.ss();
     netWorking.arp();
+
+    FileIntegrity fileintegrity;
+    fileintegrity.CheckNecessaryBlock();
+    fileintegrity.CheckSwap();
     return 0;
 }

@@ -1,19 +1,19 @@
-     100 files     159 text files.
-classified 159 filesDuplicate file check 159 files (126 known unique)Unique:      100 files                                               131 unique files.                              
+     100 files     161 text files.
+classified 161 filesDuplicate file check 161 files (128 known unique)Unique:      100 files                                               133 unique files.                              
 Counting:  100      49 files ignored.
 
-github.com/AlDanial/cloc v 1.82  T=0.08 s (1359.0 files/s, 116722.0 lines/s)
+github.com/AlDanial/cloc v 1.82  T=0.10 s (1176.1 files/s, 100223.1 lines/s)
 -------------------------------------------------------------------------------
 Language                     files          blank        comment           code
 -------------------------------------------------------------------------------
 HTML                            12            466              0           1896
+C++                             20            161            181           1649
 CSS                              6             93             80           1615
-C++                             19            158            178           1613
 JavaScript                       9             64             69            831
 C                                1            114             50            507
-make                             1            206             94            388
-C/C++ Header                    19             45             71            306
-CMake                            9             59             26            285
+make                             1            215             97            406
+C/C++ Header                    20             48             74            320
+CMake                            9             59             26            287
 JSON                            18              0              0            247
 Markdown                         7             79              0            168
 XML                              1              0              0             57
@@ -21,5 +21,5 @@ YAML                             2              0              0             10
 Bourne Shell                     2              0              0              8
 SVG                              8              0              0              8
 -------------------------------------------------------------------------------
-SUM:                           114           1284            568           7939
+SUM:                           116           1299            577           8009
 -------------------------------------------------------------------------------
