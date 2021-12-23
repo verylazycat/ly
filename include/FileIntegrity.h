@@ -11,9 +11,14 @@ using namespace std;
 class FileIntegrity {
 private:
     string fstab = "/etc/fstab";
+    string aideconfig = "/etc/aide/aide.conf";
 public:
     void CheckNecessaryBlock(void);
     void CheckSwap(void);
+    void CheckTmp(void);
+    // sudo apt-get install aide
+    bool CheckAIDEConfFile(void);
+    void CheckAIDE(void);
 };
 
 

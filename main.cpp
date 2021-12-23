@@ -85,5 +85,7 @@ int main(int argc ,char **argv) {
     FileIntegrity fileintegrity;
     fileintegrity.CheckNecessaryBlock();
     fileintegrity.CheckSwap();
+    fileintegrity.CheckTmp();
+    fileintegrity.CheckAIDE();
     return 0;
 }
