@@ -1,0 +1,222 @@
+[2021-12-26 14:47:16.366] [ss_logger] [info] tcp-state-syn_sent:
+Recv-Q    Send-Q       Local Address:Port         Peer Address:Port   Process   
+0         1            192.168.1.112:35766       142.251.43.10:443              
+0         1            192.168.1.112:35350       142.251.43.10:443              
+0         1            192.168.1.112:35290       142.251.43.10:443              
+0         1            192.168.1.112:36160       142.251.43.10:443              
+
+[2021-12-26 14:47:16.367] [ss_logger] [info] tcp-state-syn_recv:
+Recv-Q    Send-Q       Local Address:Port       Peer Address:Port    Process    
+
+[2021-12-26 14:47:16.369] [ss_logger] [info] tcp-state-listening:
+Recv-Q    Send-Q       Local Address:Port        Peer Address:Port   Process    
+0         4096         127.0.0.53%lo:53               0.0.0.0:*                 
+0         5                127.0.0.1:631              0.0.0.0:*                 
+0         128              127.0.0.1:16090            0.0.0.0:*                 
+0         4096             127.0.0.1:27017            0.0.0.0:*                 
+0         511              127.0.0.1:6379             0.0.0.0:*                 
+0         511                0.0.0.0:80               0.0.0.0:*                 
+0         128                0.0.0.0:33043            0.0.0.0:*                 
+0         128              127.0.0.1:16308            0.0.0.0:*                 
+0         5                    [::1]:631                 [::]:*                 
+0         70                       *:33060                  *:*                 
+0         151                      *:3306                   *:*                 
+0         511                  [::1]:6379                [::]:*                 
+
+[2021-12-26 14:47:16.370] [ss_logger] [info] tcp-state-established:
+Recv-Q   Send-Q     Local Address:Port           Peer Address:Port    Process   
+0        0          192.168.1.112:37814        223.119.242.93:443               
+0        0          192.168.1.112:53320       120.253.253.230:443               
+0        0          192.168.1.112:48704       120.253.250.230:443               
+0        0          192.168.1.112:44224         35.227.202.26:443               
+0        0          192.168.1.112:35260        120.253.253.33:443               
+0        0          192.168.1.112:55824          13.107.42.18:443               
+0        0          192.168.1.112:36052       120.253.255.102:443               
+0        0          192.168.1.112:34104           13.107.5.93:443               
+0        0          192.168.1.112:59608       120.253.255.100:443               
+0        0          192.168.1.112:51416         89.207.22.105:443               
+0        0          192.168.1.112:43526        120.253.255.33:443               
+0        0          192.168.1.112:36342        120.253.255.34:443               
+
+[2021-12-26 14:47:16.372] [ss_logger] [info] tcp-state-fin-wait-1:
+Recv-Q    Send-Q       Local Address:Port       Peer Address:Port    Process    
+
+[2021-12-26 14:47:16.373] [ss_logger] [info] tcp-state-close-wait:
+Recv-Q    Send-Q       Local Address:Port       Peer Address:Port    Process    
+
+[2021-12-26 14:47:16.375] [ss_logger] [info] tcp-state-fin-wait-2:
+Recv-Q    Send-Q       Local Address:Port       Peer Address:Port    Process    
+
+[2021-12-26 14:47:16.376] [ss_logger] [info] tcp-state-time-wait:
+Recv-Q    Send-Q       Local Address:Port       Peer Address:Port    Process    
+0         0                    [::1]:8080              [::1]:48532              
+0         0                    [::1]:8080              [::1]:48058              
+0         0                    [::1]:8080              [::1]:48164              
+0         0                    [::1]:8080              [::1]:48588              
+0         0                    [::1]:8080              [::1]:48112              
+0         0                    [::1]:8080              [::1]:48324              
+0         0                    [::1]:8080              [::1]:48006              
+0         0                    [::1]:8080              [::1]:48640         [2021-12-26 14:47:16.387] [TmpStickybit_logger] [info] /tmp permissions bit is safe
+[2021-12-26 14:47:16.386] [CheckAIDE_logger] [info] aide confif info:
+# AIDE conf
+
+# The daily cron job depends on these paths
+database=file:/var/lib/aide/aide.db
+database_out=file:/var/lib/aide/aide.db.new
+database_new=file:/var/lib/aide/aide.db.new
+gzip_dbout=yes
+
+# Set to no to disable summarize_changes option.
+summarize_changes=yes
+
+# Set to no to disable grouping of files in report.
+grouped=yes
+
+# standard verbose level
+verbose = 6
+
+# Set to yes to print the checksums in the report in hex format
+report_base16 = no
+
+# if you want to sacrifice security for speed, remove some of these
+# checksums. Whirlpool is broken on sparc and sparc64 (see #429180,
+# #420547, #152203).
+Checksums = sha256+sha512+rmd160+haval+gost+crc32+tiger
+
+# The checksums of the databases to be printed in the report
+# Set to 'E' to disable.
+database_attrs = Checksums
+
+# check permissions, owner, group and file type
+OwnerMode = p+u+g+ftype
+
+# Check size and block count
+Size = s+b
+
+# Files that stay static
+InodeData = OwnerMode+n+i+Size+l+X
+StaticFile = m+c+Checksums
+
+# Files that stay static but are copied to a ram disk on startup
+
+[2021-12-26 14:47:16.385] [CheckTmp_logger] [info] /tmp file info:
+/tmp/qipc_sharedmemory_UkePHPbwSQdfMLmAVipzNpPzgWCPcbGRo9297cc12943837510df037ce57af4755bf5e57e6
+/tmp/winstone4270744066023135476.jar
+/tmp/config-err-MYk3Uq
+/tmp/sunlogin_rundaemon.log
+/tmp/sogoupinyin-qimpanel-watchdog-1000:0.pid
+/tmp/hsperfdata_jenkins/1647
+/tmp/qipc_systemsem_UkePHPbwSQdfMLmAVipzNpPzgWCPcbGRo9297cc12943837510df037ce57af4755bf5e57e6
+/tmp/tmp3c298m6l.svg
+
+[2021-12-26 14:47:15.602] [CheckCron_logger] [warning] SHELL=/bin/sh
+[2021-12-26 14:47:15.602] [CheckCron_logger] [warning] PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+[2021-12-26 14:47:15.602] [CheckCron_logger] [warning] 17 *	* * *	root    cd / && run-parts --report /etc/cron.hourly
+[2021-12-26 14:47:15.602] [CheckCron_logger] [warning] 25 6	* * *	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily )
+[2021-12-26 14:47:15.602] [CheckCron_logger] [warning] 47 6	* * 7	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.weekly )
+[2021-12-26 14:47:15.602] [CheckCron_logger] [warning] 52 6	1 * *	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.monthly )
+[2021-12-26 14:47:15.602] [CheckAuthBoot_logger] [critical] Grub unencrypted
+[2021-12-26 14:47:15.602] [CheckGrubBootLoader_logger] [info] open /boot/grub/grub.cfg sucess
+[2021-12-26 14:47:15.602] [CheckGrubBootLoader_logger] [warning] grub.cfg is not automatically generated by grub-mkconfig using templates
+[2021-12-26 14:47:16.328] [CheckNullPass_logger] [info] The mysql password not empty
+[2021-12-26 14:47:16.380] [arp_logger] [info] arp-info:地址                     类型    硬件地址            标志  Mask            接口
+192.168.1.1              ether   bc:5f:f6:fb:28:47   C                     enp3s0f1
+记录: 1	跳过: 0	找到: 1
+
+
+[2021-12-26 14:47:16.330] [CheckIntranetAccess_logger] [critical] The extranet can access Redis
+[2021-12-26 14:47:15.602] [basic_logger] [info] domainname:(none)
+[2021-12-26 14:47:15.602] [basic_logger] [info] machine:x86_64
+[2021-12-26 14:47:15.602] [basic_logger] [info] nodename:admin233
+[2021-12-26 14:47:15.602] [basic_logger] [info] release:5.11.0-43-generic
+[2021-12-26 14:47:15.602] [basic_logger] [info] version:#47~20.04.2-Ubuntu SMP Mon Dec 13 11:06:56 UTC 2021
+[2021-12-26 14:47:15.602] [basic_logger] [info] bufferram:136368128
+[2021-12-26 14:47:15.602] [basic_logger] [info] freehigh:0
+[2021-12-26 14:47:15.602] [basic_logger] [info] freeswap:1709174784
+[2021-12-26 14:47:15.602] [basic_logger] [info] mem_unit:1
+[2021-12-26 14:47:15.602] [basic_logger] [info] pad:0
+[2021-12-26 14:47:15.602] [basic_logger] [info] procs:1082
+[2021-12-26 14:47:15.602] [basic_logger] [info] sharedram:34684928
+[2021-12-26 14:47:15.602] [basic_logger] [info] totalhigh:0
+[2021-12-26 14:47:15.602] [basic_logger] [info] uptime:2741
+[2021-12-26 14:47:15.602] [CheckUmask_logger] [info] Umask for super user is secure
+[2021-12-26 14:47:15.602] [CheckNoPwUser_logger] [info] All users have passwords
+[2021-12-26 14:47:16.344] [RetrievingZombieProcesses_logger] [critical] zombie progression pid:2042
+
+[2021-12-26 14:47:15.602] [CheckIsOnlyUser_logger] [info] User name Security
+[2021-12-26 14:47:16.327] [CheckCerts_logger] [info] All Certificate security
+[2021-12-26 14:47:16.330] [CheckRedisPass_logger] [critical] Redis does not set a password
+[2021-12-26 14:47:16.363] [CheckCoreDumpOK_logger] [critical] Core dump is not started
+[2021-12-26 14:47:16.362] [CheckPAE_logger] [info] The PAE patch has been installed
+[2021-12-26 14:47:16.331] [CheckCUPSRemoteAccess_logger] [critical] Unsafe configuration:{WebInterface No}
+[2021-12-26 14:47:16.331] [AuditConfiguration_logger] [warning] provides UDP/TCP syslog reception
+[2021-12-26 14:47:16.329] [CheckDangerousCMD_logger] [critical] Redis-FLUSHALL is not safe
+[2021-12-26 14:47:16.329] [CheckDangerousCMD_logger] [info] Redis-CONFIG is safe
+[2021-12-26 14:47:16.329] [CheckDangerousCMD_logger] [critical] Redis-EVAL is not safe
+[2021-12-26 14:47:16.332] [CheckDNS_logger] [info] Nameserver is the default
+[2021-12-26 14:47:16.364] [NicStatus_logger] [info] NicStatus:
+docker0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 172.17.0.1  netmask 255.255.0.0  broadcast 172.17.255.255
+        ether 02:42:b0:dd:b6:dc  txqueuelen 0  (以太网)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+enp3s0f1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.1.112  netmask 255.255.255.0  broadcast 192.168.1.255
+        inet6 fe80::7779:78b9:b993:d223  prefixlen 64  scopeid 0x20<link>
+        ether 00:e0:4c:84:4e:64  txqueuelen 1000  (以太网)
+        RX packets 42840  bytes 31280624 (31.2 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 25874  bytes 3500418 (3.5 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (本地环回)
+
+[2021-12-26 14:47:16.333] [AuditSSHConfig_logger] [info] SSH profile permission security:��0m�-rw-r--r--
+
+[2021-12-26 14:47:16.333] [AuditSSHConfig_logger] [critical] PasswordAuthentication is unsafe
+[2021-12-26 14:47:16.344] [CheckNginxLog_logger] [info] Ngnix Access_log is ok
+[2021-12-26 14:47:16.344] [CheckNginxLog_logger] [info] Ngnix Error_log is ok
+     
+0         0                    [::1]:8080              [::1]:48220              
+0         0                    [::1]:8080              [::1]:48480              
+0         0                    [::1]:8080              [::1]:48272              
+0         0                    [::1]:8080              [::1]:48376              
+
+[2021-12-26 14:47:16.378] [ss_logger] [info] tcp-state-last-ack:
+Recv-Q    Send-Q       Local Address:Port       Peer Address:Port    Process    
+
+[2021-12-26 14:47:16.379] [ss_logger] [info] tcp-state-closing:
+Recv-Q    Send-Q       Local Address:Port       Peer Address:Port    Process    
+
+[2021-12-26 14:47:16.344] [CheckNginxSSL_logger] [critical] Nginx SSL is not enabled
+[2021-12-26 14:47:16.331] [CheckCUPSPermissions_logger] [info] CUPS permission security
+[2021-12-26 14:47:16.363] [HostsParsing_logger] [info] IP-DOMAIN:127.0.0.1	localhost
+[2021-12-26 14:47:16.363] [HostsParsing_logger] [info] IP-DOMAIN:127.0.1.1	admin233
+[2021-12-26 14:47:16.363] [HostsParsing_logger] [info] IP-DOMAIN:::1     ip6-localhost ip6-loopback
+[2021-12-26 14:47:16.363] [HostsParsing_logger] [info] IP-DOMAIN:fe00::0 ip6-localnet
+[2021-12-26 14:47:16.363] [HostsParsing_logger] [info] IP-DOMAIN:ff00::0 ip6-mcastprefix
+[2021-12-26 14:47:16.363] [HostsParsing_logger] [info] IP-DOMAIN:ff02::1 ip6-allnodes
+[2021-12-26 14:47:16.363] [HostsParsing_logger] [info] IP-DOMAIN:ff02::2 ip6-allrouters
+[2021-12-26 14:47:16.363] [HostsParsing_logger] [info] IP-DOMAIN:20.205.243.166  github.com
+[2021-12-26 14:47:16.363] [HostsParsing_logger] [info] IP-DOMAIN:140.82.114.4 github.com
+[2021-12-26 14:47:16.363] [HostsParsing_logger] [info] IP-DOMAIN:199.232.69.194 github.global.ssl.fastly.net
+[2021-12-26 14:47:16.363] [HostsParsing_logger] [info] IP-DOMAIN:185.199.108.153 assets-cdn.github.com
+[2021-12-26 14:47:16.363] [HostsParsing_logger] [info] IP-DOMAIN:185.199.109.153 assets-cdn.github.com
+[2021-12-26 14:47:16.363] [HostsParsing_logger] [info] IP-DOMAIN:185.199.110.153 assets-cdn.github.com
+[2021-12-26 14:47:16.363] [HostsParsing_logger] [info] IP-DOMAIN:185.199.111.153 assets-cdn.github.com
+[2021-12-26 14:47:16.363] [HostsParsing_logger] [info] IP-DOMAIN:104.16.230.188 api.huobi.pro
+[2021-12-26 14:47:16.382] [CheckNecessaryBlock_logger] [info] /home info:
+文件系统        容量  已用  可用 已用% 挂载点
+/dev/sda2       234G  143G   80G   65% /
+
+[2021-12-26 14:47:16.383] [CheckNecessaryBlock_logger] [info] /tmp info:
+文件系统        容量  已用  可用 已用% 挂载点
+/dev/sda2       234G  143G   80G   65% /
+
+[2021-12-26 14:47:16.383] [CheckSwap_logger] [info] swap block have been configured

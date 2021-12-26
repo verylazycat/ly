@@ -73,3 +73,20 @@ void FileIntegrity::CheckAIDE(void){
     logger->info("aide confif info:\n{}",res);
     return;
 }
+void FileIntegrity::TmpStickybit(void){
+    // ls -l -d /tmp | awk '{print $1}'
+    auto logger = spdlog::basic_logger_mt("TmpStickybit_logger", "logs/basic-log.txt");
+    const char *cmd = "ls -l -d /tmp | awk '{print $1}'";
+    char res[4096];
+    bzero(res,sizeof(res));
+    Utils::executeCMD(cmd,res);
+    if (Utils::KMPsearch(res,"drwxrwxrwt")){
+        spdlog::info("/tmp permissions bit is safe");
+        logger->info("/tmp permissions bit is safe");   
+    }
+    else{
+        spdlog::critical("/tmp permissions bit is not safe");
+        logger->critical("/tmp permissions bit is not safe");
+    }
+    return;
+}

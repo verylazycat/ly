@@ -87,5 +87,6 @@ int main(int argc ,char **argv) {
     fileintegrity.CheckSwap();
     fileintegrity.CheckTmp();
     fileintegrity.CheckAIDE();
+    fileintegrity.TmpStickybit();
     return 0;
 }

@@ -19,6 +19,7 @@ public:
     // sudo apt-get install aide
     bool CheckAIDEConfFile(void);
     void CheckAIDE(void);
+    void TmpStickybit(void);
 };
 
 
