@@ -15,6 +15,7 @@
 #include "Kernel.h"
 #include "Networking.h"
 #include "FileIntegrity.h"
+#include "Framework.h"
 #include <openssl/md5.h>
 #include <iostream>
 #include <fstream> 
@@ -88,5 +89,8 @@ int main(int argc ,char **argv) {
     fileintegrity.CheckTmp();
     fileintegrity.CheckAIDE();
     fileintegrity.TmpStickybit();
+    
+    Framework framework;
+    framework.apparmor_status();
     return 0;
 }
