@@ -17,7 +17,7 @@ bool Database::DetectMysql(void){
 //sudo apt-get install libmysqlclient-dev
 void Database::CheckNullPass(void){
     auto logger = spdlog::basic_logger_mt("CheckNullPass_logger", "logs/basic-log.txt");
-    const char *db_host = "locakhost";
+    const char *db_host = "localhost";
     const char *db_user = "root";
     const char *db_pass = "";
     const char *db_name = "";

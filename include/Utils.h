@@ -10,8 +10,19 @@
 #include <sstream>
 #include <algorithm>
 #include <fstream> 
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <errno.h> 
+#include <unistd.h> 
+#include <netdb.h>
+#include <net/if.h>  
+#include <arpa/inet.h> 
+#include <sys/ioctl.h>  
+#include <sys/types.h>  
+#include <sys/time.h> 
 #include <iomanip>
 #include <openssl/md5.h>
+#include <mysql/mysql.h>
 #include <spdlog/spdlog.h>
 #include <spdlog/sinks/basic_file_sink.h>
 
@@ -27,6 +38,8 @@ public:
     static string dec2hex(int x);
     static bool KMPsearch(const string &text,const string &pattern);
     static void  executeCMD(const char *cmd,char *res);
+    static string get_local_ip(const char *eth_inf);
+    static void updatebyip(const char *db_name,string table_name,string column,string value);
 };
 
 

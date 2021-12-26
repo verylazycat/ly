@@ -16,6 +16,7 @@
 #include "Networking.h"
 #include "FileIntegrity.h"
 #include "Framework.h"
+#include "Utils.h"
 #include <openssl/md5.h>
 #include <iostream>
 #include <fstream> 
@@ -92,5 +93,6 @@ int main(int argc ,char **argv) {
     
     Framework framework;
     framework.apparmor_status();
+    Utils::updatebyip("LY-core","BaseInfo","sysrelease","1234");
     return 0;
 }
