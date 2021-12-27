@@ -129,7 +129,7 @@ string Utils::get_local_ip(const char *eth_inf){
     return res;
 }
 void Utils::updatebyip(const char *db_name,string table_name,string column,string value){
-    auto logger = spdlog::basic_logger_mt("update_logger", "logs/basic-log.txt");
+    auto logger = spdlog::basic_logger_mt("updatebyip1_logger", "logs/basic-log.txt");
     const char *db_host = "localhost";
     const char *db_user = "admin233";
     const char *db_pass = "admin233";
@@ -196,6 +196,88 @@ void Utils::updatebyip(const char *db_name,string table_name,string column,strin
         }
         else{
              // not null then update...
+            if (mysql_query(mysql,update.c_str())){
+                spdlog::critical("mysql error:{}",mysql_error(mysql));
+                logger->critical("mysql error:{}",mysql_error(mysql));
+                mysql_free_result(result);
+                mysql_close(mysql);
+                return;
+            }
+            mysql_free_result(result);
+            mysql_close(mysql);
+            return;
+        }
+    }
+}
+void Utils::updatebyip(const char *db_name,string table_name,string column,int value){
+    auto logger = spdlog::basic_logger_mt("updatebyip2_logger", "logs/basic-log.txt");
+    const char *db_host = "localhost";
+    const char *db_user = "admin233";
+    const char *db_pass = "admin233";
+    const int db_port = 3306;
+    string localip = get_local_ip("enp3s0f1");
+    MYSQL *mysql = mysql_init(NULL);
+    if (mysql == NULL){
+        spdlog::critical("mysql error:{}",mysql_error(mysql));
+        logger->critical("mysql error:{}",mysql_error(mysql));
+        mysql_close(mysql);
+        return;
+    }
+    mysql = mysql_real_connect(mysql,db_host,db_user,db_pass,db_name,db_port,NULL,0);
+    if (!mysql){
+        spdlog::critical("mysql error:{}",mysql_error(mysql));
+        logger->critical("mysql error:{}",mysql_error(mysql));
+        mysql_close(mysql);
+        return;
+    }
+    MYSQL_RES *result;
+    // select * from BaseInfo where ip = "192.168.xxxx"
+    string query = "select * from ";
+    query += table_name;
+    query += " where ip = \"";
+    query += localip;
+    query += "\"";
+    // insert into BaseInfo (ip,column) values ("192.168.xxxx",value)
+    string insert = "insert into ";
+    insert += table_name;
+    insert += " (ip,";
+    insert += column;
+    insert += ") ";
+    insert += "values (\"";
+    insert += localip;
+    insert += "\",";
+    insert += to_string(value);
+    insert += ")";
+    // update BaseInfo set column=xxx where ip = "192.168.xxxx";
+    string update = "update ";
+    update += table_name;
+    update += " set ";
+    update += column;
+    update += " = ";
+    update += to_string(value);
+    update += " where ip = \"";
+    update += localip;
+    update+="\"";
+    if (!mysql_query(mysql,query.c_str())){
+        result = mysql_store_result(mysql);
+        // result->row_count
+        if (!result->row_count){
+            //null then insert...
+            if (mysql_query(mysql,insert.c_str())){
+                //error
+                spdlog::critical("mysql error:{}",mysql_error(mysql));
+                logger->critical("mysql error:{}",mysql_error(mysql));
+                mysql_free_result(result);
+                mysql_close(mysql);
+                return;
+            }
+            mysql_free_result(result);
+            mysql_close(mysql);
+            return;
+        }
+        else{
+             // not null then update...
+            spdlog::info(update);
             if (mysql_query(mysql,update.c_str())){
                 spdlog::critical("mysql error:{}",mysql_error(mysql));
                 logger->critical("mysql error:{}",mysql_error(mysql));

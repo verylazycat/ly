@@ -40,6 +40,7 @@ public:
     static void  executeCMD(const char *cmd,char *res);
     static string get_local_ip(const char *eth_inf);
     static void updatebyip(const char *db_name,string table_name,string column,string value);
+    static void updatebyip(const char *db_name,string table_name,string column,int value);
 };
 
 

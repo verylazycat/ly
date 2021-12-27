@@ -93,6 +93,7 @@ int main(int argc ,char **argv) {
     
     Framework framework;
     framework.apparmor_status();
-    Utils::updatebyip("LY-core","BaseInfo","sysrelease","1234");
+    // Utils::updatebyip("LY-core","BaseInfo","sysrelease","1234");
+    // Utils::updatebyip("LY-core","BaseInfo","bufferram",999);
     return 0;
 }
