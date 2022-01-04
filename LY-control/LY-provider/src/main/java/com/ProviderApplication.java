@@ -8,8 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @EnableDubbo
 @SpringBootApplication
 @MapperScan("com.base.mapper")
-public class Providerapplication {
+public class ProviderApplication {
     public static void main(String[] args) {
-        SpringApplication.run(Providerapplication.class,args);
+        SpringApplication.run(ProviderApplication.class,args);
     }
 }

@@ -5,9 +5,11 @@
     <file url="file://$PROJECT_DIR$/LY-api/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/LY-consumer/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/LY-consumer/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/LY-gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/LY-gateway/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/LY-model/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/LY-model/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/LY-provider/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/LY-provider/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
   </component>
 </project>
