@@ -7,10 +7,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="LY-model" />
         <module name="LY-provider" />
-        <module name="LY-consumer" />
         <module name="LY-gateway" />
+        <module name="LY-consumer" />
       </profile>
     </annotationProcessing>
   </component>
