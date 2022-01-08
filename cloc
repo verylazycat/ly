@@ -2,7 +2,7 @@
 classified 189 filesDuplicate file check 189 files (154 known unique)Unique:      100 files                                               161 unique files.                              
 Counting:  100      54 files ignored.
 
-github.com/AlDanial/cloc v 1.82  T=0.18 s (774.0 files/s, 61850.9 lines/s)
+github.com/AlDanial/cloc v 1.82  T=0.14 s (969.8 files/s, 77910.7 lines/s)
 -------------------------------------------------------------------------------
 Language                     files          blank        comment           code
 -------------------------------------------------------------------------------
@@ -11,10 +11,10 @@ HTML                            11            427              0           1768
 CSS                              6             93             80           1627
 JavaScript                       9             65             69            839
 C                                1            114             50            507
+XML                              8              0              0            431
 make                             1            224            100            424
-XML                              8              0              0            416
+Maven                            6              9             17            383
 C/C++ Header                    21             51             78            350
-Maven                            6             10             17            337
 CMake                            9             59             26            289
 JSON                            18              0              0            247
 Java                             9             56             63            193
@@ -23,5 +23,5 @@ YAML                             2              0              0             10
 Bourne Shell                     2              0              0              8
 SVG                              8              0              0              8
 -------------------------------------------------------------------------------
-SUM:                           139           1343            686           9078
+SUM:                           139           1342            686           9139
 -------------------------------------------------------------------------------
