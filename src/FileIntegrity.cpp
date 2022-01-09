@@ -39,7 +39,7 @@ void FileIntegrity::CheckSwap(void){
 void FileIntegrity::CheckTmp(void){
     auto logger = spdlog::basic_logger_mt("CheckTmp_logger", "logs/basic-log.txt");
     const char *cmd = "find /tmp -type f";
-    char res[1024];
+    char res[10000];
     bzero(res,sizeof(res));
     Utils::executeCMD(cmd,res);
     spdlog::info("/tmp file info:\n{}",res);
@@ -66,7 +66,7 @@ void FileIntegrity::CheckAIDE(void){
         return;
     }
     const char *cmd = "cat /etc/aide/aide.conf";
-    char res[2048];
+    char res[10000];
     bzero(res,sizeof(res));
     Utils::executeCMD(cmd,res);
     spdlog::info("aide confif info:\n{}",res);

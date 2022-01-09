@@ -17,6 +17,7 @@
 #include "FileIntegrity.h"
 #include "Framework.h"
 #include "Utils.h"
+#include "Firewall.h"
 #include <openssl/md5.h>
 #include <iostream>
 #include <fstream> 
@@ -95,5 +96,8 @@ int main(int argc ,char **argv) {
     framework.apparmor_status();
     // Utils::updatebyip("LY-core","BaseInfo","sysrelease","1234");
     // Utils::updatebyip("LY-core","BaseInfo","bufferram",999);
+
+    Firewall firewall;
+    firewall.GetIptabelse();
     return 0;
 }

@@ -24,7 +24,7 @@ void NetWorking::HostsParsing(){
 void NetWorking::NicStatus(void){
     auto logger = spdlog::basic_logger_mt("NicStatus_logger", "logs/basic-log.txt");
     const char *cmd = "ifconfig";
-    char res[2048];
+    char res[10000];
     bzero(res,sizeof(res));
     Utils::executeCMD(cmd,res);
     spdlog::info("NicStatus:\n{}",res);
