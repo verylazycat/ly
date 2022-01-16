@@ -2,6 +2,7 @@ package com.controller;
 
 import com.api.BaseinfoApi;
 import com.base.entity.Baseinfo;
+import com.response.ResponseResult;
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,8 +16,8 @@ public class BaseinfoController {
     @DubboReference
     private BaseinfoApi baseinfoApi;
     @GetMapping("/BaseInfo")
-    public List<Baseinfo> getbaseinfo(){
+    public ResponseResult getbaseinfo(){
         final List<Baseinfo> list = baseinfoApi.GetAllBaseinfo();
-        return list;
+        return ResponseResult.ok(list);
     }
 }
