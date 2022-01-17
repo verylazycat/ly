@@ -1,27 +1,27 @@
-     100 files     189 text files.
-classified 189 filesDuplicate file check 189 files (154 known unique)Unique:      100 files                                               161 unique files.                              
+     100 files     194 text files.
+classified 194 filesDuplicate file check 194 files (159 known unique)Unique:      100 files                                               166 unique files.                              
 Counting:  100      54 files ignored.
 
-github.com/AlDanial/cloc v 1.82  T=0.14 s (969.8 files/s, 77910.7 lines/s)
+github.com/AlDanial/cloc v 1.82  T=0.17 s (840.9 files/s, 66570.5 lines/s)
 -------------------------------------------------------------------------------
 Language                     files          blank        comment           code
 -------------------------------------------------------------------------------
-C++                             21            165            203           1887
+C++                             22            168            208           1918
 HTML                            11            427              0           1768
 CSS                              6             93             80           1627
 JavaScript                       9             65             69            839
 C                                1            114             50            507
-XML                              8              0              0            431
-make                             1            224            100            424
-Maven                            6              9             17            383
-C/C++ Header                    21             51             78            350
-CMake                            9             59             26            289
+make                             1            233            103            442
+XML                              8              0              0            436
+Maven                            7             11             17            413
+CMake                            9             59             26            362
+C/C++ Header                    22             54             81            362
 JSON                            18              0              0            247
-Java                             9             56             63            193
+Java                            11             60             68            220
 Markdown                         7             79              0            168
 YAML                             2              0              0             10
-Bourne Shell                     2              0              0              8
 SVG                              8              0              0              8
+Bourne Shell                     2              0              0              8
 -------------------------------------------------------------------------------
-SUM:                           139           1342            686           9139
+SUM:                           144           1363            702           9335
 -------------------------------------------------------------------------------

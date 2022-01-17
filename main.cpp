@@ -18,6 +18,7 @@
 #include "Framework.h"
 #include "Utils.h"
 #include "Firewall.h"
+#include "Hardening.h"
 #include <openssl/md5.h>
 #include <iostream>
 #include <fstream> 
@@ -99,5 +100,10 @@ int main(int argc ,char **argv) {
 
     Firewall firewall;
     firewall.GetIptabelse();
+
+    Hardening hardening;
+    hardening.CheckGCC();
+    hardening.CheckGPP();
+    hardening.CheckCMAKE();
     return 0;
 }
