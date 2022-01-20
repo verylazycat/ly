@@ -15,6 +15,7 @@
 #include "Kernel.h"
 #include "Networking.h"
 #include "FileIntegrity.h"
+#include "Squid.h"
 #include "Framework.h"
 #include "Utils.h"
 #include "Firewall.h"
@@ -105,5 +106,8 @@ int main(int argc ,char **argv) {
     hardening.CheckGCC();
     hardening.CheckGPP();
     hardening.CheckCMAKE();
+
+    Squid squid;
+    squid.CheckSquidStatus();
     return 0;
 }
