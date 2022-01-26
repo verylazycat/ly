@@ -43,10 +43,12 @@ void Logging::AuditConfiguration(void){
     if (!tcp514 || !udp514){
         spdlog::info("provides UDP/TCP syslog reception");
         logger->info("provides UDP/TCP syslog reception");
+        Utils::updatebyip("LY-core","Logging","tcpudpreception",1);
     }
     else{
-        spdlog::warn("provides UDP/TCP syslog reception");
-        logger->warn("provides UDP/TCP syslog reception");
+        spdlog::warn("provides UDP/TCP syslog not reception");
+        logger->warn("provides UDP/TCP syslog not reception");
+        Utils::updatebyip("LY-core","Logging","tcpudpreception",0);
     }
     return;
 }

@@ -35,14 +35,23 @@ void Accounting::BaseInfo() {
     Utils::updatebyip("LY-core","BaseInfo","version",string(this->sysuname.version));
 //    //================= info ===============
     spdlog::info("bufferram:{}", this->info.bufferram);
+    Utils::updatebyip("LY-core","BaseInfo","bufferram",this->info.bufferram);
     spdlog::info("freehigh:{}", this->info.freehigh);
+    Utils::updatebyip("LY-core","BaseInfo","freehigh",this->info.freehigh);
     spdlog::info("freeswap:{}", this->info.freeswap);
+    Utils::updatebyip("LY-core","BaseInfo","freeswap",this->info.freeswap);
     spdlog::info("mem_unit:{}", this->info.mem_unit);
+    Utils::updatebyip("LY-core","BaseInfo","mem_unit",this->info.mem_unit);
     spdlog::info("pad:{}", this->info.pad);
+    Utils::updatebyip("LY-core","BaseInfo","pad",this->info.pad);
     spdlog::info("procs:{}", this->info.procs);
+    Utils::updatebyip("LY-core","BaseInfo","procs",this->info.procs);
     spdlog::info("sharedram:{}", this->info.sharedram);
+    Utils::updatebyip("LY-core","BaseInfo","sharedram",this->info.sharedram);
     spdlog::info("totalhigh:{}", this->info.totalhigh);
+    Utils::updatebyip("LY-core","BaseInfo","totalhigh",this->info.totalhigh);
     spdlog::info("uptime:{}", this->info.uptime);
+    Utils::updatebyip("LY-core","BaseInfo","uptime",this->info.uptime);
     try {
 //        ============ log ===============
 //        ============= sysuname ============

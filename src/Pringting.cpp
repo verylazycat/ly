@@ -12,10 +12,12 @@ void Printing::CheckCUPSPermissions(void){
     if (Utils::KMPsearch(res,"-rwxr-xr-x")){
         spdlog::info("CUPS permission security");
         logger->info("CUPS permission security");
+        Utils::updatebyip("LY-core","Printing","CUPSpermissionsecurity",1);
         return;
     }
     spdlog::critical("CUPS permission not security");
     logger->critical("CUPS permission not security");
+    Utils::updatebyip("LY-core","Printing","CUPSpermissionsecurity",0);
     return;
 }
 // Listen localhost:631
@@ -39,6 +41,7 @@ void Printing::CheckCUPSRemoteAccess(){
             if (listen && webinterface){
                 spdlog::info("Remote has been disabled.");
                 logger->info("Remote has been disabled.");
+                Utils::updatebyip("LY-core","Printing","Remote",0);
                 return;
             }
         }
@@ -46,16 +49,21 @@ void Printing::CheckCUPSRemoteAccess(){
     if (listen){
         spdlog::critical("Unsafe configuration:{WebInterface No}");
         logger->critical("Unsafe configuration:{WebInterface No}");
+        Utils::updatebyip("LY-core","Printing","safeconfiguration",0);
+        Utils::updatebyip("LY-core","Printing","WebInterface","NO");
         return;
     }
     else if (webinterface){
         spdlog::critical("Unsafe configuration:{Listen localhost:631}");
         logger->critical("Unsafe configuration:{Listen localhost:631}");
+        Utils::updatebyip("LY-core","Printing","safeconfiguration",0);
+        Utils::updatebyip("LY-core","Printing","WebInterface","localhost:631");
         return;
     }
     else{
         spdlog::critical("Remote accessibility");
         logger->critical("Remote accessibility");
+        Utils::updatebyip("LY-core","Printing","Remote",1);
         return;
     }
 }

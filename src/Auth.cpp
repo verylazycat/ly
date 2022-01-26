@@ -32,11 +32,13 @@ void Auth::CheckIsOnlyUser() {
         else{
             spdlog::critical("Duplicate user name:{}",username);
             logger->critical("Duplicate user name:{}",username);
+            Utils::updatebyip("LY-core","Auth","duplicatename",string(username));
             break;
         }
     }
     spdlog::info("User name Security");
     logger->info("User name Security");
+    Utils::updatebyip("LY-core","Auth","namesecurity",1);
 }
 
 void Auth::CheckNoPwUser() {
@@ -67,15 +69,20 @@ void Auth::CheckNoPwUser() {
             invalidcount++;
             spdlog::critical("user[{}] has no password",username);
             logger->critical("user[{}] has no password",username);
+            Utils::updatebyip("LY-core","Auth","nopwuser",string(username));
         }
     }
     if (invalidcount) {
         spdlog::critical("A total of {} users do not have passwords",invalidcount);
         logger->critical("A total of {} users do not have passwords",invalidcount);
+        Utils::updatebyip("LY-core","Auth","invalidcount",invalidcount);
     }
     else {
         spdlog::info("All users have passwords");
         logger->info("All users have passwords");
+        Utils::updatebyip("LY-core","Auth","pwsecurity",1);
+        Utils::updatebyip("LY-core","Auth","nopwuser","");
+        Utils::updatebyip("LY-core","Auth","invalidcount",0);
     }
 }
 void Auth::CheckUmask(){
@@ -85,16 +92,20 @@ void Auth::CheckUmask(){
     mode_t safe_common_mode = 002;
     mode_t  safe_super_mode = 0022;
     spdlog::info("curent user uid:{}",current_uid);
+    Utils::updatebyip("LY-core","Auth","current_uid",current_uid);
     spdlog::info("curent umask(18 hexadecimal):{}",mode);
+    Utils::updatebyip("LY-core","Auth","mode",mode);
      //common users
     if(current_uid != 0){
         if(mode == safe_common_mode){
             spdlog::info("Umask for common users is secure");
             logger->info("Umask for common users is secure");
+            Utils::updatebyip("LY-core","Auth","safe_common_mode",1);
         }
         else{
             spdlog::warn("Umask for common users is not secure");
             logger->warn("Umask for common users is not secure");
+            Utils::updatebyip("LY-core","Auth","safe_common_mode",0);
         }
     }
     //root user
@@ -102,10 +113,12 @@ void Auth::CheckUmask(){
         if(mode == safe_super_mode){
             spdlog::info("Umask for super user is secure");
             logger->info("Umask for super user is secure");
+            Utils::updatebyip("LY-core","Auth","safe_super_mode",1);
         }
         else{
             spdlog::warn("Umask for super user is not secure");
             logger->warn("Umask for super user is not secure");
+            Utils::updatebyip("LY-core","Auth","safe_super_mode",0);
         }
     }
 }

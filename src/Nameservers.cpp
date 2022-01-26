@@ -27,11 +27,13 @@ void Nameservers::CheckDNS(void){
             if (Utils::KMPsearch(line,"nameserver 127.0.0.53")){
                 spdlog::info("Nameserver is the default");
                 logger->info("Nameserver is the default");
+                Utils::updatebyip("LY-core","Nameservers","DNSdefault",1);
                 return;
             }
         }
     }
     spdlog::critical("Nameserver is not the default");
     logger->critical("Nameserver is not the default");
+    Utils::updatebyip("LY-core","Nameservers","DNSdefault",0);
     return;
 }

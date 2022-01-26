@@ -32,10 +32,12 @@ void Crypto::CheckCerts(){
     if (overdue){
             logger->critical("total of {} certificates have expired",overdue);
             spdlog::critical("total of {} certificates have expired",overdue);
+            Utils::updatebyip("LY-core","Crypto","total",overdue);
         }
         else{
             logger->info("All Certificate security");
             spdlog::info("All Certificate security");
+            Utils::updatebyip("LY-core","Crypto","total",0);
         }
     closedir(dir);
 }

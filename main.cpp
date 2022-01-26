@@ -32,6 +32,7 @@ using namespace std;
 DEFINE_bool(default_scan, true, "default scan,exclude virus scan");
 DEFINE_bool(ac,false,"accounting scan");
 DEFINE_bool(au,false,"auth scan");
+DEFINE_bool(bo,false,"boot scan");
 DEFINE_bool(cr,false,"crypto scan");
 DEFINE_bool(da,false,"database scan");
 DEFINE_bool(pr,false,"printing scan");
@@ -92,7 +93,7 @@ int main(int argc ,char **argv) {
     Squid squid;
     //========== gflags setting ==========
     ///========== default init ==========
-    if (FLAGS_ac || FLAGS_au || FLAGS_cr || FLAGS_da ||FLAGS_pr
+    if (FLAGS_ac || FLAGS_au || FLAGS_bo || FLAGS_cr || FLAGS_da ||FLAGS_pr
             || FLAGS_lo || FLAGS_na || FLAGS_ss || FLAGS_to || FLAGS_pro
             || FLAGS_we || FLAGS_ma || FLAGS_ke || FLAGS_ne || FLAGS_fi
             || FLAGS_fr || FLAGS_fir || FLAGS_ha || FLAGS_sq)
@@ -159,6 +160,11 @@ int main(int argc ,char **argv) {
         auth.CheckNoPwUser();
         auth.CheckUmask();
         spdlog::info("======== auth scan end ========");
+    }
+    if (FLAGS_bo){
+        boot.CheckAuthBoot();
+        boot.CheckCron();
+        boot.CheckGrubBootLoader();
     }
     if (FLAGS_cr){
         spdlog::info("======== crypto scan start ========");
