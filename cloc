@@ -1,22 +1,22 @@
-     100 files     114 text files.
-classified 114 filesDuplicate file check 114 files (101 known unique)Unique:      100 files                                               104 unique files.                              
+     100 files     120 text files.
+classified 120 filesDuplicate file check 120 files (107 known unique)Unique:      100 files                                               110 unique files.                              
 Counting:  100      20 files ignored.
 
-github.com/AlDanial/cloc v 1.82  T=0.05 s (2017.3 files/s, 89529.0 lines/s)
+github.com/AlDanial/cloc v 1.82  T=0.04 s (2459.9 files/s, 105824.9 lines/s)
 -------------------------------------------------------------------------------
 Language                     files          blank        comment           code
 -------------------------------------------------------------------------------
 C++                             23             47            191           1738
 Maven                            7             11             17            413
+XML                              8              1              0            390
 C/C++ Header                    24             60             87            389
-XML                              7              0              0            379
+Java                            16             88             84            290
 Markdown                         9             96              0            243
 JSON                             9              0              0            238
-Java                            11             60             68            220
 YAML                             3              0              0             16
 CSS                              1              4              0             11
 CMake                            1              0              0              9
 Bourne Shell                     2              0              0              8
 -------------------------------------------------------------------------------
-SUM:                            97            278            363           3664
+SUM:                           103            307            379           3745
 -------------------------------------------------------------------------------

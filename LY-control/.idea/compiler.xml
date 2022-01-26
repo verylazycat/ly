@@ -12,6 +12,7 @@
         <module name="LY-provider" />
         <module name="LY-gateway" />
         <module name="LY-consumer" />
+        <module name="common" />
         <module name="LY-api" />
       </profile>
     </annotationProcessing>
