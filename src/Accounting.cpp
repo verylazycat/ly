@@ -22,11 +22,17 @@ Accounting::Accounting() {
 void Accounting::BaseInfo() {
     //============== sysuname =============
     spdlog::info({"domainname:{}"}, this->sysuname.domainname);
+    Utils::updatebyip("LY-core","BaseInfo","domainname",string(this->sysuname.domainname));
     spdlog::info("machine:{}", this->sysuname.machine);
+    Utils::updatebyip("LY-core","BaseInfo","machine",string(this->sysuname.machine));
     spdlog::info("nodename:{}", this->sysuname.nodename);
+    // Utils::updatebyip("LY-core","BaseInfo","nodename",string(this->sysuname.nodename));
     spdlog::info("release:{}", this->sysuname.release);
+    Utils::updatebyip("LY-core","BaseInfo","sysrelease",string(this->sysuname.release));
     spdlog::info("sysname:{}", this->sysuname.sysname);
+    Utils::updatebyip("LY-core","BaseInfo","sysname",string(this->sysuname.sysname));
     spdlog::info("version:{}", this->sysuname.version);
+    Utils::updatebyip("LY-core","BaseInfo","version",string(this->sysuname.version));
 //    //================= info ===============
     spdlog::info("bufferram:{}", this->info.bufferram);
     spdlog::info("freehigh:{}", this->info.freehigh);
