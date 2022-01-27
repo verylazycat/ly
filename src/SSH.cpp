@@ -26,10 +26,12 @@ void SSH::AuditSSHConfig(void){
     if (Utils::KMPsearch(res,"-rw-r--r--")){
         spdlog::info("SSH profile permission security:{}",res);
         logger->info("SSH profile permission security:{}",res);
+        Utils::updatebyip("LY-core","SSH","confsecurity",1);
     }
     else{
         spdlog::critical("SSH profile permission not security:{}",res);
         logger->critical("SSH profile permission not security:{}",res);
+        Utils::updatebyip("LY-core","SSH","confsecurity",0);
     }
     // PasswordAuthentication
     bool PasswordAuthentication = false;
@@ -52,10 +54,12 @@ void SSH::AuditSSHConfig(void){
     if (PasswordAuthentication){
         spdlog::info("PasswordAuthentication is ok");
         logger->info("PasswordAuthentication is ok");
+        Utils::updatebyip("LY-core","SSH","PasswordAuthentication",1);
     }
     else{
         spdlog::critical("PasswordAuthentication is unsafe");
         logger->critical("PasswordAuthentication is unsafe");
+        Utils::updatebyip("LY-core","SSH","PasswordAuthentication",0);
     }
-    //....
+    //...
 }

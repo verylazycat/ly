@@ -36,10 +36,12 @@ void Web::CheckNginxSSL(){
     if (sslok){
         spdlog::info("Nginx SSL is enabled");
         logger->info("Nginx SSL is enabled");
+        Utils::updatebyip("LY-core","Web","nginx_ssl",1);
     }
     else{
         spdlog::critical("Nginx SSL is not enabled");
         logger->critical("Nginx SSL is not enabled");
+        Utils::updatebyip("LY-core","Web","nginx_ssl",0);
     }
 }
 void Web::CheckNginxLog(){
@@ -71,17 +73,21 @@ void Web::CheckNginxLog(){
     if (access_log){
         spdlog::info("Ngnix Access_log is ok");
         logger->info("Ngnix Access_log is ok");
+        Utils::updatebyip("LY-core","Web","ngnix_access_log",1);
     }
     else{
         spdlog::critical("Ngnix Access_log is not ok");
         logger->critical("Ngnix Access_log is not ok");
+        Utils::updatebyip("LY-core","Web","ngnix_access_log",0);
     }
     if (error_log){
         spdlog::info("Ngnix Error_log is ok");
         logger->info("Ngnix Error_log is ok");
+        Utils::updatebyip("LY-core","Web","ngnix_error_log",1);
     }
     else{
         spdlog::critical("Ngnix Error_log is not ok");
         logger->critical("Ngnix Error_log is not ok");
+        Utils::updatebyip("LY-core","Web","ngnix_error_log",0);
     }
 }

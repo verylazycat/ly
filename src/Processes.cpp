@@ -18,21 +18,26 @@ void Processes::RetrievingZombieProcesses(){
     if (copy_res.empty()){
         spdlog::info("No zombie progression");
         logger->info("No zombie progression");
+        Utils::updatebyip("LY-core","Processes","zombie",0);
         return;
     }
     char pid[1024];
     bzero(pid,sizeof(pid));
     int index = 0;
+    string save = "";
     for (char c : copy_res){
         pid[index++] = c;
         if (c == '\n'){
             spdlog::critical("zombie progression pid:{}",pid);
             logger->critical("zombie progression pid:{}",pid);
+            Utils::updatebyip("LY-core","Processes","zombie",1);
+            save += string(pid) + "|";
             index = 0;
             bzero(pid,sizeof(pid));
             continue;
         }
     }
+    Utils::updatebyip("LY-core","Processes","zombie_pid",save);
 }
 //TODO:寻找高IO进程
 // void Processes::FindIoTop(void){

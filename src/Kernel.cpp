@@ -47,11 +47,13 @@ void Kernel::CheckPAE(void){
     if (PAE){
         spdlog::info("The PAE patch has been installed");
         logger->info("The PAE patch has been installed");
+        Utils::updatebyip("LY-core","Kernel","PAE",1);
         return;
     }
     else{
         spdlog::critical("The PAE patch has not been installed");
         logger->critical("The PAE patch has not been installed");
+        Utils::updatebyip("LY-core","Kernel","PAE",0);
         return;
     }
 }
@@ -66,11 +68,13 @@ void Kernel::CheckCoreDumpOK(void){
     if (res[0] == '0'){
         spdlog::critical("Core dump is not started");
         logger->critical("Core dump is not started");
+        Utils::updatebyip("LY-core","Kernel","core_dump",0);
         return;
     }
     else{
-        spdlog::critical("Core dump is  started");
-        logger->critical("Core dump is  started");
+        spdlog::critical("Core dump is started");
+        logger->critical("Core dump is started");
+        Utils::updatebyip("LY-core","Kernel","core_dump",1);
         return;
     }
 }

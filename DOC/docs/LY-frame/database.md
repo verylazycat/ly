@@ -84,4 +84,57 @@ desc: 数据库
 | ip         | ip地址          |
 | DNSdefault | DNS是否是默认值 |
 
+### SSH
+
+| 字段名                 | 描述                 |
+| ---------------------- | -------------------- |
+| ip                     | ip地址               |
+| confsecurity           | 配置文件权限是否安全 |
+| PasswordAuthentication | 是否开启密码认证     |
+
+### Processes
+
+| 字段名     | 描述           |
+| ---------- | -------------- |
+| ip         | ip地址         |
+| zombie     | 是否有僵尸进程 |
+| zombie_pid | 僵尸进程pid    |
+
+### Web
+
+| 字段名           | 描述                         |
+| ---------------- | ---------------------------- |
+| ip               | ip地址                       |
+| nginx_ssl        | 判断nginx ssl是否开启        |
+| ngnix_access_log | 判断ngnix_access_log是否开启 |
+| ngnix_error_log  | 判断ngnix_error_log是否开启  |
+
+### Kernel
+
+| 字段名    | 描述                |
+| --------- | ------------------- |
+| ip        | ip地址              |
+| PAE       | 判断PAE补丁是否安装 |
+| core_dump | 是否开启core dump   |
+
+### NetWorking
+
+| 字段名                | 描述      |
+| --------------------- | --------- |
+| ip                    | ip地址    |
+| IP-DOMAIN             | IP-DOMAIN |
+| NicStatus             |           |
+| tcp-state-syn_sent    |           |
+| tcp-state-syn_recv    |           |
+| tcp-state-listening   |           |
+| tcp-state-established |           |
+| tcp-state-fin-wait-1  |           |
+| tcp-state-close-wait  |           |
+| tcp-state-fin-wait-2  |           |
+| tcp-state-time-wait   |           |
+| tcp-state-last-ack    |           |
+| tcp-state-closing     |           |
+| arp-info              |           |
+
 FOREIGN KEY(ip) REFERENCES BaseInfo(ip)
+
