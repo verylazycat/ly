@@ -119,22 +119,22 @@ desc: 数据库
 
 ### NetWorking
 
-| 字段名                | 描述      |
-| --------------------- | --------- |
-| ip                    | ip地址    |
-| IP-DOMAIN             | IP-DOMAIN |
-| NicStatus             |           |
-| tcp-state-syn_sent    |           |
-| tcp-state-syn_recv    |           |
-| tcp-state-listening   |           |
-| tcp-state-established |           |
-| tcp-state-fin-wait-1  |           |
-| tcp-state-close-wait  |           |
-| tcp-state-fin-wait-2  |           |
-| tcp-state-time-wait   |           |
-| tcp-state-last-ack    |           |
-| tcp-state-closing     |           |
-| arp-info              |           |
+| 字段名                       | 描述      |
+| ---------------------------- | --------- |
+| ip                           | ip地址    |
+| IP-DOMAIN                    | IP-DOMAIN |
+| NicStatus                    |           |
+| tcp-state-syn_sent           |           |
+| tcp-state-syn_reNetWorkingcv |           |
+| tcp-state-listening          |           |
+| tcp-state-established        |           |
+| tcp-state-fin-wait-1         |           |
+| tcp-state-close-wait         |           |
+| tcp-state-fin-wait-2         |           |
+| tcp-state-time-wait          |           |
+| tcp-state-last-ack           |           |
+| tcp-state-closing            |           |
+| arp-info                     |           |
 
 ### FileIntegrity
 

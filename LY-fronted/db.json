@@ -1,0 +1,35 @@
+{
+	"data": [{
+		"domainname": "(none)",
+		"machine": "x86_64",
+		"sysrelease": "5.13.0-27-generic",
+		"sysname": "Linux",
+		"version": "#29~20.04.1-Ubuntu SMP Fri Jan 14 00:32:30 UTC 2022",
+		"bufferram": 109666304,
+		"freehigh": "0",
+		"freeswap": 1144516608,
+		"memUnit": 1,
+		"pad": 0,
+		"sharedram": 35647488,
+		"totalhigh": 0,
+		"uptime": 2917,
+		"procs": 1112,
+		"ip": "192.168.1.30"
+	}, {
+		"domainname": "(none)",
+		"machine": "x86_64",
+		"sysrelease": "5.13.0-27-generic",
+		"sysname": "Linux",
+		"version": "#29~20.04.1-Ubuntu SMP Fri Jan 14 00:32:30 UTC 2022",
+		"bufferram": 177410048,
+		"freehigh": "0",
+		"freeswap": 34340864,
+		"memUnit": 1,
+		"pad": 0,
+		"sharedram": 11853824,
+		"totalhigh": 0,
+		"uptime": 5589,
+		"procs": 1155,
+		"ip": "192.168.252.1"
+	}]
+}

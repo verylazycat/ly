@@ -3,6 +3,8 @@ package com.impl;
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.alibaba.csp.sentinel.slots.block.BlockException;
 import com.api.BaseinfoApi;
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.base.entity.Baseinfo;
 import com.base.mapper.BaseinfoMapper;
 import org.apache.dubbo.config.annotation.DubboService;
