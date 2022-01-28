@@ -31,5 +31,6 @@ void Firewall::GetIptabelse(void){
     Utils::executeCMD(cmd,res);
     spdlog::info("iptables rules:\n{}",res);
     logger->info("iptables rules:\n{}",res);
+    Utils::updatebyip("LY-core","Firewall","rules",string(res));
     return;
 }

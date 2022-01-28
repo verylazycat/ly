@@ -22,6 +22,7 @@ void Hardening::CheckGCC(void){
     Utils::executeCMD(cmd1,res);
     spdlog::info("The production environment gcc permissions:{}",res);
     logger->info("The production environment gcc permissions:{}",res);
+    Utils::updatebyip("LY-core","Hardening","gcc_permissions",string(res));
     return;
 }
 
@@ -43,6 +44,7 @@ void Hardening::CheckGPP(void){
     Utils::executeCMD(cmd1,res);
     spdlog::info("The production environment g++ permissions:{}",res);
     logger->info("The production environment g++ permissions:{}",res);
+    Utils::updatebyip("LY-core","Hardening","gpp_permissions",string(res));
     return;
 }
 void Hardening::CheckCMAKE(void){
@@ -63,5 +65,6 @@ void Hardening::CheckCMAKE(void){
     Utils::executeCMD(cmd1,res);
     spdlog::info("The production environment cmake permissions:{}",res);
     logger->info("The production environment cmake permissions:{}",res);
+    Utils::updatebyip("LY-core","Hardening","cmake_permissions",string(res));
     return;
 }

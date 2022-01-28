@@ -27,22 +27,26 @@ void Squid::CheckSquidStatus(void){
     Utils::executeCMD(cmd,res);
     spdlog::info("{}",res);
     logger->info("{}",res);
+    Utils::updatebyip("LY-core","Squid","status",string(res));
     /// pid
     cmd = "sudo systemctl status squid | grep -E \"PID\"";
     bzero(res,sizeof(res));
     Utils::executeCMD(cmd,res);
     spdlog::info("{}",res);
     logger->info("{}",res);
+    Utils::updatebyip("LY-core","Squid","pid",string(res));
     //version
     cmd = "squid --version  | grep Version | awk '{print $4}'";
     bzero(res,sizeof(res));
     Utils::executeCMD(cmd,res);
     spdlog::info("squid version:{}",res);
     logger->info("squid version:{}",res);
+    Utils::updatebyip("LY-core","Squid","version",string(res));
     //bit
     cmd = "ls -la /etc/squid/squid.conf | awk '{print$1}'";
     bzero(res,sizeof(res));
     Utils::executeCMD(cmd,res);
     spdlog::info("squid permissions:{}",res);
     logger->info("squid permissions:{}",res);
+    Utils::updatebyip("LY-core","Squid","bit",string(res));
 }

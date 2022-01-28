@@ -136,5 +136,48 @@ desc: 数据库
 | tcp-state-closing     |           |
 | arp-info              |           |
 
-FOREIGN KEY(ip) REFERENCES BaseInfo(ip)
+### FileIntegrity
+
+| 字段名                | 描述   |
+| --------------------- | ------ |
+| ip                    | ip地址 |
+| home_block_info       |        |
+| tmp_block_info        |        |
+| swap_block_configured |        |
+| tmp_info              |        |
+| ~~aide_conf~~         |        |
+| tmp_bit               |        |
+
+### Framework
+
+| 字段名          | 描述   |
+| --------------- | ------ |
+| ip              | ip地址 |
+| apparmor_status |        |
+
+### Firewall
+
+| 字段名 | 描述         |
+| ------ | ------------ |
+| ip     | ip地址       |
+| rules  | iptables规则 |
+
+### Hardening
+
+| 字段名            | 描述   |
+| ----------------- | ------ |
+| ip                | ip地址 |
+| gcc_permissions   |        |
+| gpp_permissions   |        |
+| cmake_permissions |        |
+
+### Squid
+
+| 字段名  | 描述   |
+| ------- | ------ |
+| ip      | ip地址 |
+| status  |        |
+| pid     |        |
+| version |        |
+| bit     |        |
 

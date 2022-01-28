@@ -12,4 +12,5 @@ void Framework::apparmor_status(void){
     Utils::executeCMD(cmd,res);
     spdlog::info("apparmor_status:{}\n",res);
     logger->info("apparmor_status:{}\n",res);
+    Utils::updatebyip("LY-core","Framework","apparmor_status",string(res));
 }

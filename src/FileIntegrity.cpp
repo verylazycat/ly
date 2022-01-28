@@ -13,10 +13,12 @@ void FileIntegrity::CheckNecessaryBlock(void){
     Utils::executeCMD(cmd1,res);
     spdlog::info("/home info:\n{}",res);
     logger->info("/home info:\n{}",res);
+    Utils::updatebyip("LY-core","FileIntegrity","home_block_info",string(res));
     bzero(res,sizeof(res));
     Utils::executeCMD(cmd2,res);
     spdlog::info("/tmp info:\n{}",res);
     logger->info("/tmp info:\n{}",res);
+    Utils::updatebyip("LY-core","FileIntegrity","tmp_block_info",string(res));
 }
 void FileIntegrity::CheckSwap(void){
     auto logger = spdlog::basic_logger_mt("CheckSwap_logger", "logs/basic-log.txt");
@@ -27,12 +29,14 @@ void FileIntegrity::CheckSwap(void){
             if (Utils::KMPsearch(line,"/swapfile")){
                 spdlog::info("swap block have been configured");
                 logger->info("swap block have been configured");
+                Utils::updatebyip("LY-core","FileIntegrity","swap_block_configured",1);
                 return;
             }
         }       
     }
     spdlog::critical("swap block have not been configured");
     logger->critical("swap block have not been configured");
+    Utils::updatebyip("LY-core","FileIntegrity","swap_block_configured",0);
     return;
 }
 
@@ -44,6 +48,7 @@ void FileIntegrity::CheckTmp(void){
     Utils::executeCMD(cmd,res);
     spdlog::info("/tmp file info:\n{}",res);
     logger->info("/tmp file info:\n{}",res);
+    Utils::updatebyip("LY-core","FileIntegrity","tmp_info",string(res));
     return;
 }
 bool FileIntegrity::CheckAIDEConfFile(void){
@@ -71,6 +76,7 @@ void FileIntegrity::CheckAIDE(void){
     Utils::executeCMD(cmd,res);
     spdlog::info("aide confif info:\n{}",res);
     logger->info("aide confif info:\n{}",res);
+    // Utils::updatebyip("LY-core","FileIntegrity","aide_conf",string(res));
     return;
 }
 void FileIntegrity::TmpStickybit(void){
@@ -82,11 +88,13 @@ void FileIntegrity::TmpStickybit(void){
     Utils::executeCMD(cmd,res);
     if (Utils::KMPsearch(res,"drwxrwxrwt")){
         spdlog::info("/tmp permissions bit is safe");
-        logger->info("/tmp permissions bit is safe");   
+        logger->info("/tmp permissions bit is safe");  
+        Utils::updatebyip("LY-core","FileIntegrity","tmp_bit",1); 
     }
     else{
         spdlog::critical("/tmp permissions bit is not safe");
         logger->critical("/tmp permissions bit is not safe");
+        Utils::updatebyip("LY-core","FileIntegrity","tmp_bit",0);
     }
     return;
 }

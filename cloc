@@ -1,22 +1,22 @@
-     100 files     125 text files.
-classified 125 filesDuplicate file check 125 files (107 known unique)Unique:      100 files                                               110 unique files.                              
-Counting:  100      25 files ignored.
+     100 files     120 text files.
+classified 120 filesDuplicate file check 120 files (106 known unique)Unique:      100 files                                               110 unique files.                              
+Counting:  100      20 files ignored.
 
-github.com/AlDanial/cloc v 1.82  T=0.08 s (1347.8 files/s, 59134.4 lines/s)
+github.com/AlDanial/cloc v 1.82  T=0.08 s (1250.1 files/s, 55573.9 lines/s)
 -------------------------------------------------------------------------------
 Language                     files          blank        comment           code
 -------------------------------------------------------------------------------
-C++                             23             47            191           1773
+C++                             23             47            192           1789
 Maven                            7             11             17            413
 XML                              8              1              0            390
 C/C++ Header                    24             60             87            389
+Markdown                         9            116              0            319
 Java                            16             88             84            290
-Markdown                         9            107              0            285
 JSON                             9              0              0            238
 YAML                             3              0              0             16
 CSS                              1              4              0             11
 CMake                            1              0              0              9
 Bourne Shell                     2              0              0              8
 -------------------------------------------------------------------------------
-SUM:                           103            318            379           3822
+SUM:                           103            327            380           3872
 -------------------------------------------------------------------------------
