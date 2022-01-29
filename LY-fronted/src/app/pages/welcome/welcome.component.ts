@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClientServiceService } from 'src/app/http-client-service.service';
 import { HttpClient } from '@angular/common/http';
-import { of } from 'rxjs';
 @Component({
   selector: 'app-welcome',
   templateUrl: './welcome.component.html',
@@ -19,6 +18,7 @@ export class WelcomeComponent implements OnInit {
   GetAllBaseInfo(){
     this.service.GetBaseInfo().subscribe((res)=>{
       this.BaseInfo = res
+      console.log(this.BaseInfo)
     })
   }
   

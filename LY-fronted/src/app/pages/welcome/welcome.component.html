@@ -1,8 +1,8 @@
 <nz-card nzTitle="网络主机">
-    <div *ngFor="let host of BaseInfo['data']">
+    <div *ngFor="let host of BaseInfo">
         <div nz-card-grid style="width: auto; textAlign: 'center'">
-            <a href=""><img src="../../../assets/bg-pc.png" alt=""></a>
-            <p>{{host["ip"]}}</p>
+            <a routerLink="/status/{{host['ip']}}"><img src="../../../assets/bg-pc.png" alt=""></a>
+            <p>{{host["sysname"]}}:{{host["ip"]}}</p>
         </div>
     </div>
   </nz-card>

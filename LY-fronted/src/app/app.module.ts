@@ -14,7 +14,9 @@ import { IconsProviderModule } from './icons-provider.module';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { StatusComponent } from './pages/status/status.component';
-
+import { NgxEchartsModule } from 'ngx-echarts';
+import * as echarts from 'echarts'
+import { NzTableModule } from 'ng-zorro-antd/table';
 registerLocaleData(zh);
 
 @NgModule({
@@ -30,7 +32,11 @@ registerLocaleData(zh);
     BrowserAnimationsModule,
     IconsProviderModule,
     NzLayoutModule,
-    NzMenuModule
+    NzMenuModule,
+    NzTableModule,
+    NgxEchartsModule.forRoot({
+      echarts
+    })
   ],
   providers: [{ provide: NZ_I18N, useValue: zh_CN }],
   bootstrap: [AppComponent]

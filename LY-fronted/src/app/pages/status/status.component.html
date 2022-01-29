@@ -1,1 +1,24 @@
-<p>status works!</p>
+<h1 style="text-align: center;">主机状态</h1>
+<nz-table nzTemplateMode>
+    <thead>
+      <tr>
+        <th>ip</th>
+        <th>domainname</th>
+        <th>machine</th>
+        <th>sysname</th>
+        <th>version</th>
+        <th>sysrelease</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="HostBaseInfo['0']">
+      <tr>
+        <td>{{ HostBaseInfo['0']['ip'] }}</td>
+        <td>{{ HostBaseInfo['0']['domainname'] }}</td>
+        <td>{{ HostBaseInfo['0']['machine'] }}</td>
+        <td>{{ HostBaseInfo['0']['sysname'] }}</td>
+        <td>{{ HostBaseInfo['0']['version'] }}</td>
+        <td>{{ HostBaseInfo['0']['sysrelease'] }}</td>
+      </tr>
+    </tbody>
+</nz-table>
+<div echarts [options]="options" class="chart"></div>
