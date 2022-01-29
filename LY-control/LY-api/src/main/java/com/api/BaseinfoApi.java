@@ -8,4 +8,5 @@ import java.util.List;
 
 public interface BaseinfoApi {
     List<Baseinfo> GetAllBaseinfo();
+    List<Baseinfo> GetBaseInfoByIP(String ip);
 }

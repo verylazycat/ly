@@ -22,6 +22,15 @@ public class DubboBaseinfoProvider implements BaseinfoApi {
         final List<Baseinfo> list = baseinfoMapper.selectList(null);
         return list;
     }
+
+    @Override
+    public List<Baseinfo> GetBaseInfoByIP(String ip) {
+        QueryWrapper<Baseinfo> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("ip",ip);
+        final List<Baseinfo> baseinfos = baseinfoMapper.selectList(queryWrapper);
+        return baseinfos;
+    }
+
     public String bonjourFallback(Throwable t) {
         if (BlockException.isBlockException(t)) {
             return "Blocked by Sentinel: " + t.getClass().getSimpleName();
