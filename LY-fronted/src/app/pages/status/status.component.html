@@ -1,4 +1,8 @@
-<h1 style="text-align: center;">主机状态</h1>
+<div *ngIf="HostBaseInfo['0']" style="text-align: center;">
+  <a routerLink="/status/{{HostBaseInfo['0']['ip']}}">基本状态</a>
+  <i nz-icon nzType="more" nzTheme="outline"></i>
+  <a routerLink="/securitystatus/{{HostBaseInfo['0']['ip']}}">安全状态</a>
+</div>
 <nz-table nzTemplateMode>
     <thead>
       <tr>

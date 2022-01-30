@@ -1,0 +1,9 @@
+{
+	"data": [{
+		"ip": "192.168.1.30",
+		"grubsecurity": 0,
+		"grubencrypted": 0,
+		"storedsecurely": 0,
+		"cron": "SHELL=/bin/shPATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin17 *\t* * *\troot    cd / && run-parts --report /etc/cron.hourly25 6\t* * *\troot\ttest -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily )47 6\t* * 7\troot\ttest -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.weekly )52 6\t1 * *\troot\ttest -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.monthly )"
+	}]
+}

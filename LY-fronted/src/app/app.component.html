@@ -4,7 +4,8 @@
             nzWidth="256px"
             nzBreakpoint="md"
             [(nzCollapsed)]="isCollapsed"
-            [nzTrigger]="null">
+            [nzTrigger]="null"
+            >
     <div class="sidebar-logo">
       <a href="">
         <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo">
@@ -15,23 +16,23 @@
       <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
         <ul>
           <li nz-menu-item nzMatchRouter>
-            <a routerLink="/welcome">主页</a>
+            <a routerLink="/welcome">监控大盘</a>
           </li>
           <li nz-menu-item nzMatchRouter>
-            <a>Monitor</a>
+            <a>帮助中心</a>
           </li>
           <li nz-menu-item nzMatchRouter>
-            <a>Workplace</a>
+            <a>关于我们</a>
           </li>
         </ul>
       </li>
-      <li nz-submenu nzOpen nzTitle="Form" nzIcon="form">
+      <!-- <li nz-submenu nzOpen nzTitle="Form" nzIcon="form">
         <ul>
           <li nz-menu-item nzMatchRouter>
             <a>Basic Form</a>
           </li>
         </ul>
-      </li>
+      </li> -->
     </ul>
   </nz-sider>
   <nz-layout>

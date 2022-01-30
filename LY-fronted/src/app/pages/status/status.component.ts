@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpClientServiceService } from 'src/app/http-client-service.service';
 import { ActivatedRoute } from '@angular/router';  // 用于获取路由参数
-import { DomSanitizer } from '@angular/platform-browser'; // 用于HTML过滤
 import { Location } from '@angular/common'; // 用于回退浏览记录
 @Component({
   selector: 'app-status',

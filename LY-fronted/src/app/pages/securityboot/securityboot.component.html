@@ -1,0 +1,35 @@
+<div *ngIf="BootData[0]">
+  <a routerLink="/securitystatus/{{BootData[0]['ip']}}">Auth</a>
+  <i nz-icon nzType="more" nzTheme="outline"></i>
+  <a routerLink="/securityboot/{{BootData[0]['ip']}}">Boot</a>
+</div>
+<nz-table nzTemplateMode>
+    <thead>
+      <tr>
+        <th>类目</th>
+        <th>状态</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="BootData[0]">
+      <tr>
+        <td>ip</td>
+        <td><nz-tag [nzColor]="'#87d068'">{{ BootData[0]["ip"] }}</nz-tag></td>
+      </tr>
+      <tr>
+        <td>grub是否安全</td>
+        <td><nz-tag [nzColor]="'#87d068'">172.168.0.1</nz-tag></td>
+      </tr>
+      <tr>
+        <td>grub加密</td>
+        <td><nz-tag [nzColor]="'#87d068'">172.168.0.1</nz-tag></td>
+      </tr>
+      <tr>
+        <td>grub存储安全</td>
+        <td><nz-tag [nzColor]="'#87d068'">172.168.0.1</nz-tag></td>
+      </tr>
+      <tr>
+        <td>计划任务</td>
+        <td><nz-tag [nzColor]="'#87d068'">172.168.0.1</nz-tag></td>
+      </tr>
+    </tbody>
+</nz-table>

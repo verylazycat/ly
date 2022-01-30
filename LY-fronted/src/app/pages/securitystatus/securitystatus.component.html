@@ -1,0 +1,82 @@
+<div *ngIf="AuthData[0]">
+  <a routerLink="/securitystatus/{{AuthData[0]['ip']}}">Auth</a>
+  <i nz-icon nzType="more" nzTheme="outline"></i>
+  <a routerLink="/securityboot/{{AuthData[0]['ip']}}">Boot</a>
+</div>
+<nz-table nzTemplateMode>
+    <thead>
+      <tr>
+        <th>类目</th>
+        <th>状态</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="AuthData[0]">
+      <tr>
+        <td>ip</td>
+        <td><nz-tag [nzColor]="'#87d068'">{{ AuthData[0]['ip'] }}</nz-tag></td>
+      </tr>
+      <tr>
+          <td>重复用户名</td>
+          <td *ngIf="AuthData[0]['duplicatename']=='null';else duplicatename"><nz-tag [nzColor]="'#87d068'">正常</nz-tag></td>
+          <ng-template #duplicatename>
+            <td><nz-tag [nzColor]="'#f50'">异常</nz-tag></td>
+          </ng-template>
+      </tr>
+      <tr>
+        <td>用户名安全性</td>
+        <td *ngIf="AuthData[0]['namesecurity']=='1';else namesecurity"><nz-tag [nzColor]="'#87d068'">正常</nz-tag></td>
+        <ng-template #namesecurity>
+          <td><nz-tag [nzColor]="'#f50'">异常</nz-tag></td>
+        </ng-template>
+      </tr>
+      <tr>
+        <td>无密码用户</td>
+        <td *ngIf="AuthData[0]['nopwuser']=='';else nopwuser"><nz-tag [nzColor]="'#87d068'">无</nz-tag></td>
+        <ng-template #nopwuser>
+          <td><nz-tag [nzColor]="'#f50'">{{ AuthData[0]['nopwuser'] }}</nz-tag></td>
+        </ng-template>
+      </tr>
+      <tr>
+          <td>非法用户数</td>
+          <td *ngIf="AuthData[0]['invalidcount']=='0';else invalidcount"><nz-tag [nzColor]="'#87d068'">{{ AuthData[0]['invalidcount'] }}</nz-tag></td>
+          <ng-template #invalidcount>
+            <td><nz-tag [nzColor]="'#f50'">{{ AuthData[0]['invalidcount'] }}</nz-tag></td>
+          </ng-template>
+        </tr>
+      <tr>
+          <td>密码安全性</td>
+          <td *ngIf="AuthData[0]['pwsecurity']=='1';else pwsecurity"><nz-tag [nzColor]="'#87d068'">正常</nz-tag></td>
+          <ng-template #pwsecurity>
+            <td><nz-tag [nzColor]="'#f50'">异常</nz-tag></td>
+          </ng-template>
+        </tr>
+      <tr>
+        <td>当前用户uid</td>
+        <td *ngIf="AuthData[0]['currentUid']=='1000';else currentUid"><nz-tag [nzColor]="'#87d068'">{{ AuthData[0]['currentUid'] }}</nz-tag></td>
+        <ng-template #currentUid>
+          <td><nz-tag [nzColor]="'#f50'">{{ AuthData[0]['currentUid'] }}</nz-tag></td>
+        </ng-template>
+      </tr>
+      <tr>
+        <td>环境umask</td>
+        <td *ngIf="AuthData[0]['mode']=='2';else mode"><nz-tag [nzColor]="'#87d068'">{{ AuthData[0]['mode'] }}</nz-tag></td>
+        <ng-template #mode>
+          <td><nz-tag [nzColor]="'#f50'">{{ AuthData[0]['mode'] }}</nz-tag></td>
+        </ng-template>
+      </tr>
+      <tr>
+        <td>普通用户umask是否安全</td>
+        <td *ngIf="AuthData[0]['safeCommonMode']=='1';else safeCommonMode"><nz-tag [nzColor]="'#87d068'">正常</nz-tag></td>
+        <ng-template #safeCommonMode>
+          <td><nz-tag [nzColor]="'#f50'">异常</nz-tag></td>
+        </ng-template>
+      </tr>
+      <tr>
+        <td>超级用户umask是否安全</td>
+        <td *ngIf="AuthData[0]['safeSuperMode']=='1';else safeSuperMode"><nz-tag [nzColor]="'#87d068'">正常</nz-tag></td>
+        <ng-template #safeSuperMode>
+          <td><nz-tag [nzColor]="'#f50'">异常</nz-tag></td>
+        </ng-template>
+      </tr>
+    </tbody>
+</nz-table>

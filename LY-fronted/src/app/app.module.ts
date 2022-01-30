@@ -17,12 +17,18 @@ import { StatusComponent } from './pages/status/status.component';
 import { NgxEchartsModule } from 'ngx-echarts';
 import * as echarts from 'echarts'
 import { NzTableModule } from 'ng-zorro-antd/table';
+import { SecuritystatusComponent } from './pages/securitystatus/securitystatus.component';
+import { NzTagModule } from 'ng-zorro-antd/tag';
+import { SecuritybootComponent } from './pages/securityboot/securityboot.component';
+
 registerLocaleData(zh);
 
 @NgModule({
   declarations: [
     AppComponent,
-    StatusComponent
+    StatusComponent,
+    SecuritystatusComponent,
+    SecuritybootComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +40,7 @@ registerLocaleData(zh);
     NzLayoutModule,
     NzMenuModule,
     NzTableModule,
+    NzTagModule,
     NgxEchartsModule.forRoot({
       echarts
     })
