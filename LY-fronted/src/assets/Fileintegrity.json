@@ -1,0 +1,13 @@
+{
+    "data": [
+      {
+        "ip": "192.168.1.30",
+        "homeBlockInfo": "文件系统        容量  已用  可用 已用% 挂载点\n/dev/sda2       234G  172G   51G   78% /\n",
+        "tmpBlockInfo": "文件系统        容量  已用  可用 已用% 挂载点\n/dev/sda2       234G  172G   51G   78% /\n",
+        "swapBlockConfigured": 1,
+        "tmpInfo": "/tmp/segv_output.mvKOVQ\n/tmp/sunlogin_rundaemon.log\n/tmp/tmpjn621jeo.svg\n/tmp/mysql-workbench-4177/4b373146-7ff6-11ec-93fc-a91676d39bcf.db\n/tmp/mysql-workbench-4177/86176bce-7ffb-11ec-93fc-a91676d39bcf.db\n/tmp/mysql-workbench-4177/4b373142-7ff6-11ec-93fc-a91676d39bcf.db\n/tmp/mysql-workbench-4177/4b373143-7ff6-11ec-93fc-a91676d39bcf.db\n/tmp/mysql-workbench-4177/4b373144-7ff6-11ec-93fc-a91676d39bcf.db\n/tmp/winstone8395088055061876333.jar\n/tmp/hsperfdata_root/2030\n/tmp/config-err-FHu1t7\n/tmp/sogoupinyin-qimpanel-watchdog-1000:0.pid\n",
+        "aideConf": null,
+        "tmpBit": 1
+      }
+    ]
+  }

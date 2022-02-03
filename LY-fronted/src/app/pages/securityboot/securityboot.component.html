@@ -2,6 +2,10 @@
   <a routerLink="/securitystatus/{{BootData[0]['ip']}}">Auth</a>
   <i nz-icon nzType="more" nzTheme="outline"></i>
   <a routerLink="/securityboot/{{BootData[0]['ip']}}">Boot</a>
+  <i nz-icon nzType="more" nzTheme="outline"></i>
+  <a routerLink="/securitycrypto/{{BootData[0]['ip']}}">Crypto</a>
+  <i nz-icon nzType="more" nzTheme="outline"></i>
+  <a routerLink="/securityfileintegrity/{{BootData[0]['ip']}}">Fileintegrity</a>
 </div>
 <nz-table nzTemplateMode>
     <thead>
@@ -17,19 +21,31 @@
       </tr>
       <tr>
         <td>grub是否安全</td>
-        <td><nz-tag [nzColor]="'#87d068'">172.168.0.1</nz-tag></td>
+        <td *ngIf="BootData[0]['grubsecurity'] == 1;else grubsecurity"><nz-tag [nzColor]="'#87d068'">安全</nz-tag></td>
+        <ng-template #grubsecurity>
+          <td><nz-tag [nzColor]="'#f50'">不安全</nz-tag></td>
+        </ng-template>
       </tr>
       <tr>
         <td>grub加密</td>
-        <td><nz-tag [nzColor]="'#87d068'">172.168.0.1</nz-tag></td>
+        <td *ngIf="BootData[0]['grubencrypted'] == 1;else grubencrypted"><nz-tag [nzColor]="'#87d068'">安全</nz-tag></td>
+        <ng-template #grubencrypted>
+          <td><nz-tag [nzColor]="'#f50'">不安全</nz-tag></td>
+        </ng-template>
       </tr>
       <tr>
         <td>grub存储安全</td>
-        <td><nz-tag [nzColor]="'#87d068'">172.168.0.1</nz-tag></td>
+        <td *ngIf="BootData[0]['storedsecurely'] == 1;else storedsecurely"><nz-tag [nzColor]="'#87d068'">安全</nz-tag></td>
+        <ng-template #storedsecurely>
+          <td><nz-tag [nzColor]="'#f50'">不安全</nz-tag></td>
+        </ng-template>
       </tr>
       <tr>
         <td>计划任务</td>
-        <td><nz-tag [nzColor]="'#87d068'">172.168.0.1</nz-tag></td>
+        <td *ngIf="BootData[0]['cron'] == '';else cron"><nz-tag [nzColor]="'#87d068'">无任务</nz-tag></td>
       </tr>
+      <ng-template #cron>
+        <td><nz-tag [nzColor]="'#2db7f5'"><textarea nz-input placeholder="{{ BootData[0]['cron']}}" [disabled]="true" ></textarea></nz-tag></td>
+      </ng-template>
     </tbody>
 </nz-table>

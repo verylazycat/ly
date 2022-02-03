@@ -20,7 +20,9 @@ import { NzTableModule } from 'ng-zorro-antd/table';
 import { SecuritystatusComponent } from './pages/securitystatus/securitystatus.component';
 import { NzTagModule } from 'ng-zorro-antd/tag';
 import { SecuritybootComponent } from './pages/securityboot/securityboot.component';
-
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { SecuritycryptoComponent } from './pages/securitycrypto/securitycrypto.component';
+import { SecurityfileintegrityComponent } from './pages/securityfileintegrity/securityfileintegrity.component';
 registerLocaleData(zh);
 
 @NgModule({
@@ -28,7 +30,9 @@ registerLocaleData(zh);
     AppComponent,
     StatusComponent,
     SecuritystatusComponent,
-    SecuritybootComponent
+    SecuritybootComponent,
+    SecuritycryptoComponent,
+    SecurityfileintegrityComponent
   ],
   imports: [
     BrowserModule,
@@ -41,6 +45,7 @@ registerLocaleData(zh);
     NzMenuModule,
     NzTableModule,
     NzTagModule,
+    NzInputModule,
     NgxEchartsModule.forRoot({
       echarts
     })
