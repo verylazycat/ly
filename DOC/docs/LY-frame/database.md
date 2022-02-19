@@ -10,23 +10,23 @@ desc: 数据库
 
 ### BaseInfo
 
-| 字段名     | 描述 |
-| ---------- | ---- |
-| domainname |      |
-| machine    |      |
-| sysrelease |      |
-| sysname    |      |
-| version    |      |
-| bufferram  |      |
-| freehigh   |      |
-| freeswap   |      |
-| mem_unit   |      |
-| pad        |      |
-| sharedram  |      |
-| totalhigh  |      |
-| uptime     |      |
-| procs      |      |
-| ip         |      |
+| 字段名     | 描述               |
+| ---------- | ------------------ |
+| domainname | 域名               |
+| machine    | cpu架构            |
+| sysrelease | 系统版本           |
+| sysname    | 系统名             |
+| version    | 系统版本           |
+| bufferram  | 缓冲区大小         |
+| freehigh   | 可用的高内存大小   |
+| freeswap   | 还可用的交换区大小 |
+| mem_unit   | 内存单元大小       |
+| pad        |                    |
+| sharedram  | 共享的存储器的大小 |
+| totalhigh  | 高内存大小         |
+| uptime     |                    |
+| procs      | 当前进程数目       |
+| ip         | ip地址(需定义网卡) |
 
 ### Auth
 

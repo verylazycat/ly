@@ -23,6 +23,7 @@ export class StatusComponent implements OnInit {
   ngOnInit(): void {
     //后台拉数据
     this.GetBaseInfoData()
+    console.log(this.data)
     //初始化图形数据
     this.datainit()
   }
@@ -32,17 +33,17 @@ export class StatusComponent implements OnInit {
   GetBaseInfoData(){
     this.service.GetBaseInfoByIP(this.getIP()).subscribe((res)=>{
       this.HostBaseInfo = res
-      console.log(this.HostBaseInfo['0']['ip'])
+      // console.log(this.HostBaseInfo['0']['ip'])
       this.data.pop()
-      this.data.push(this.HostBaseInfo['0']['bufferram'])
-      this.data.push(this.HostBaseInfo['0']['freehigh'])
-      this.data.push(this.HostBaseInfo['0']['freeswap'])
-      this.data.push(this.HostBaseInfo['0']['memUnit'])
-      this.data.push(this.HostBaseInfo['0']['pad'])
-      this.data.push(this.HostBaseInfo['0']['sharedram'])
-      this.data.push(this.HostBaseInfo['0']['totalhigh'])
-      this.data.push(this.HostBaseInfo['0']['uptime'])
-      this.data.push(this.HostBaseInfo['0']['procs'])
+      this.data.push(this.HostBaseInfo["data"]['0']['bufferram'])
+      this.data.push(this.HostBaseInfo["data"]['0']['freehigh'])
+      this.data.push(this.HostBaseInfo["data"]['0']['freeswap'])
+      this.data.push(this.HostBaseInfo["data"]['0']['memUnit'])
+      this.data.push(this.HostBaseInfo["data"]['0']['pad'])
+      this.data.push(this.HostBaseInfo["data"]['0']['sharedram'])
+      this.data.push(this.HostBaseInfo["data"]['0']['totalhigh'])
+      this.data.push(this.HostBaseInfo["data"]['0']['uptime'])
+      this.data.push(this.HostBaseInfo["data"]['0']['procs'])
     })
   }
   // 基本信息可视化

@@ -44,7 +44,10 @@
       </tr>
       <tr>
         <td>tmpBit</td>
-        <td><textarea nz-input placeholder="{{ FileintegrityData[0]['tmpBit']}}" [disabled]="true" ></textarea></td>
+        <td *ngIf="FileintegrityData[0]['tmpBit'] == 1;else tmpBit"><nz-tag [nzColor]="'#87d068'">安全</nz-tag></td>
+        <ng-template #tmpBit>
+          <td><nz-tag [nzColor]="'#f50'">不安全</nz-tag></td>
+        </ng-template>
       </tr>
     </tbody>
 </nz-table>

@@ -4,8 +4,11 @@ import {HttpClient,HttpHeaders} from '@angular/common/http';
   providedIn: 'root'
 })
 export class HttpClientServiceService {
-  public BaseInfoApi = "http://localhost:3000/data"
-  public GetBaseInfoByIPAPI = "http://localhost:3000/data?ip="
+  // mock
+  // public BaseInfoApi = "http://localhost:3000/data"
+  // public GetBaseInfoByIPAPI = "http://localhost:3000/data?ip="
+  public BaseInfoApi = "http://localhost:7777/api/BaseInfo/"
+  // public GetBaseInfoByIPAPI = "http://localhost:7777/api/BaseInfo/"
   public AuthByIPAPI = "http://localhost:3001/data?ip="
   public BootByIPAPI = "http://localhost:3002/data?ip="
   public CryptoByIPAPI = "http://localhost:3003/data?ip="
@@ -14,11 +17,12 @@ export class HttpClientServiceService {
     public http: HttpClient
     ) { }
   GetBaseInfo(){
+    // return this.http.jsonp(this.BaseInfoApi,'callback')
     return this.http.get(this.BaseInfoApi);
   }
   GetBaseInfoByIP(ip:string){
-    // console.log(this.GetBaseInfoByIPAPI+ip)
-    return this.http.get(this.GetBaseInfoByIPAPI+ip);
+    console.log(this.BaseInfoApi+ip)
+    return this.http.get(this.BaseInfoApi+ip);
   }
   GetAuthByIP(ip:string){
     console.log(this.AuthByIPAPI+ip)

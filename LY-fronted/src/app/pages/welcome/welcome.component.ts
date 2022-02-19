@@ -18,7 +18,7 @@ export class WelcomeComponent implements OnInit {
   GetAllBaseInfo(){
     this.service.GetBaseInfo().subscribe((res)=>{
       this.BaseInfo = res
-      console.log(this.BaseInfo)
+      // console.log(this.BaseInfo)
     })
   }
   
