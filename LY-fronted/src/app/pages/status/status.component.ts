@@ -23,7 +23,7 @@ export class StatusComponent implements OnInit {
   ngOnInit(): void {
     //后台拉数据
     this.GetBaseInfoData()
-    console.log(this.data)
+    // console.log(this.data)
     //初始化图形数据
     this.datainit()
   }
@@ -33,6 +33,7 @@ export class StatusComponent implements OnInit {
   GetBaseInfoData(){
     this.service.GetBaseInfoByIP(this.getIP()).subscribe((res)=>{
       this.HostBaseInfo = res
+      // console.log(this.HostBaseInfo)
       // console.log(this.HostBaseInfo['0']['ip'])
       this.data.pop()
       this.data.push(this.HostBaseInfo["data"]['0']['bufferram'])

@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface AuthApi {
     List<Auth> GetAllAuth();
+    List<Auth> GetAuthByIP(String ip);
 }

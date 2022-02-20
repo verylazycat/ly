@@ -23,7 +23,6 @@ export class SecuritybootComponent implements OnInit {
   }
   // 数据获取
   public BootData:any = []
-
   GetBootInfoData(){
     this.service.GetBootByIP(this.getIP()).subscribe((res)=>{
       this.BootData = res;

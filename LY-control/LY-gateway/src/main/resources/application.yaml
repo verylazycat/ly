@@ -1,0 +1,53 @@
+#server.port=7777
+#spring.application.name=LY-gateway
+#java -Dserver.port=8081 -Dcsp.sentinel.dashboard.server=localhost:8081 -Dproject.name=sentinel-dashboard -jar sentinel-dashboard-1.6.3.jar
+#spring.cloud.sentinel.transport.dashboard=localhost:8081
+#spring.cloud.sentinel.eager=true
+#
+#spring.cloud.nacos.config.server-addr=127.0.0.1:8848
+#spring.cloud.nacos.config.file-extension=yaml
+#spring.profiles.active=dev
+#
+#spring.cloud.gateway.enabled=true
+#spring.cloud.gateway.discovery.locator.lower-case-service-id=true
+#spring.cloud.gateway.routes[0].id=service-route
+#spring.cloud.gateway.routes[0].uri=http://localhost:9999/
+#spring.cloud.gateway.routes[0].predicates[0]=Path=/api/**
+
+spring:
+  application:
+    name: LY-gateway
+  profiles:
+    active: dev
+  cloud:
+    sentinel:
+      transport:
+        dashboard: localhost:8081
+      eager: true
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        file-extension: yaml
+    gateway:
+      enabled: true
+      discovery:
+        locator:
+          lower-case-service-id: true
+      routes:
+        - id: service-route
+          uri: http://localhost:9999/
+          predicates:
+            - Path=/api/**
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowed-credentials: true
+            allowed-origins:
+              - "*"
+            allowed-headers: "*"
+            allowed-methods:
+              - GET
+              - OPTIONS
+            max-age: 3600
+server:
+  port: 7777

@@ -1,11 +1,11 @@
-<div *ngIf="FileintegrityData[0]">
-  <a routerLink="/securitystatus/{{FileintegrityData[0]['ip']}}">Auth</a>
+<div *ngIf="FileintegrityData['data']">
+  <a routerLink="/securitystatus/{{FileintegrityData['data'][0]['ip']}}">Auth</a>
   <i nz-icon nzType="more" nzTheme="outline"></i>
-  <a routerLink="/securityboot/{{FileintegrityData[0]['ip']}}">Boot</a>
+  <a routerLink="/securityboot/{{FileintegrityData['data'][0]['ip']}}">Boot</a>
   <i nz-icon nzType="more" nzTheme="outline"></i>
-  <a routerLink="/securitycrypto/{{FileintegrityData[0]['ip']}}">Crypto</a>
+  <a routerLink="/securitycrypto/{{FileintegrityData['data'][0]['ip']}}">Crypto</a>
   <i nz-icon nzType="more" nzTheme="outline"></i>
-  <a routerLink="/securityfileintegrity/{{FileintegrityData[0]['ip']}}">Fileintegrity</a>
+  <a routerLink="/securityfileintegrity/{{FileintegrityData['data'][0]['ip']}}">Fileintegrity</a>
 </div>
 <nz-table nzTemplateMode>
     <thead>
@@ -14,37 +14,37 @@
         <th>状态</th>
       </tr>
     </thead>
-    <tbody *ngIf="FileintegrityData[0]">
+    <tbody *ngIf="FileintegrityData['data']">
       <tr>
         <td>ip</td>
-        <td><nz-tag [nzColor]="'#87d068'">{{ FileintegrityData[0]["ip"] }}</nz-tag></td>
+        <td><nz-tag [nzColor]="'#87d068'">{{ FileintegrityData['data'][0]["ip"] }}</nz-tag></td>
       </tr>
       <tr>
           <td>home目录信息</td>
-          <td><textarea nz-input placeholder="{{ FileintegrityData[0]['homeBlockInfo']}}" [disabled]="true" ></textarea></td>
+          <td><textarea nz-input placeholder="{{ FileintegrityData['data'][0]['homeBlockInfo']}}" [disabled]="true" ></textarea></td>
       </tr>
       <tr>
         <td>tmp目录信息</td>
-        <td><textarea nz-input placeholder="{{ FileintegrityData[0]['tmpBlockInfo']}}" [disabled]="true" ></textarea></td>
+        <td><textarea nz-input placeholder="{{ FileintegrityData['data'][0]['tmpBlockInfo']}}" [disabled]="true" ></textarea></td>
       </tr>
       <tr>
         <td>swap是否配置</td>
-        <td *ngIf="FileintegrityData[0]['swapBlockConfigured'] == 1;else swapBlockConfigured"><nz-tag [nzColor]="'#87d068'">已配置</nz-tag></td>
+        <td *ngIf="FileintegrityData['data'][0]['swapBlockConfigured'] == 1;else swapBlockConfigured"><nz-tag [nzColor]="'#87d068'">已配置</nz-tag></td>
         <ng-template #swapBlockConfigured>
           <td><nz-tag [nzColor]="'#f50'">未配置</nz-tag></td>
         </ng-template>
       </tr>
       <tr>
         <td>日志文件信息</td>
-        <td><textarea nz-input placeholder="{{ FileintegrityData[0]['tmpInfo']}}" [disabled]="true" ></textarea></td>
+        <td><textarea nz-input placeholder="{{ FileintegrityData['data'][0]['tmpInfo']}}" [disabled]="true" ></textarea></td>
       </tr>
       <tr>
         <td>aide配置</td>
-        <td><textarea nz-input placeholder="{{ FileintegrityData[0]['aideConf']}}" [disabled]="true" ></textarea></td>
+        <td><textarea nz-input placeholder="{{ FileintegrityData['data'][0]['aideConf']}}" [disabled]="true" ></textarea></td>
       </tr>
       <tr>
         <td>tmpBit</td>
-        <td *ngIf="FileintegrityData[0]['tmpBit'] == 1;else tmpBit"><nz-tag [nzColor]="'#87d068'">安全</nz-tag></td>
+        <td *ngIf="FileintegrityData['data'][0]['tmpBit'] == 1;else tmpBit"><nz-tag [nzColor]="'#87d068'">安全</nz-tag></td>
         <ng-template #tmpBit>
           <td><nz-tag [nzColor]="'#f50'">不安全</nz-tag></td>
         </ng-template>

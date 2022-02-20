@@ -4,15 +4,13 @@ import {HttpClient,HttpHeaders} from '@angular/common/http';
   providedIn: 'root'
 })
 export class HttpClientServiceService {
-  // mock
-  // public BaseInfoApi = "http://localhost:3000/data"
-  // public GetBaseInfoByIPAPI = "http://localhost:3000/data?ip="
-  public BaseInfoApi = "http://localhost:7777/api/BaseInfo/"
-  // public GetBaseInfoByIPAPI = "http://localhost:7777/api/BaseInfo/"
-  public AuthByIPAPI = "http://localhost:3001/data?ip="
-  public BootByIPAPI = "http://localhost:3002/data?ip="
-  public CryptoByIPAPI = "http://localhost:3003/data?ip="
-  public FileintegrityByIPAPI = "http://localhost:3004/data?ip="
+  //gateway
+  public host = "http://localhost:7777/"
+  public BaseInfoApi = this.host + "api/BaseInfo/"
+  public AuthAPI = this.host + "api/Auth/"
+  public BootAPI = this.host + "api/BootInfo/"
+  public CryptoAPI = this.host + "api/Cryptoinfo/"
+  public FileintegrityAPI = this.host + "api/FileintegrityInfo/"
   constructor(
     public http: HttpClient
     ) { }
@@ -25,16 +23,15 @@ export class HttpClientServiceService {
     return this.http.get(this.BaseInfoApi+ip);
   }
   GetAuthByIP(ip:string){
-    console.log(this.AuthByIPAPI+ip)
-    return this.http.get(this.AuthByIPAPI+ip)
+    return this.http.get(this.AuthAPI+ip)
   }
   GetBootByIP(ip:string){
-    return this.http.get(this.BootByIPAPI+ip)
+    return this.http.get(this.BootAPI+ip)
   }
   GetCryptoByIP(ip:string){
-    return this.http.get(this.CryptoByIPAPI+ip)
+    return this.http.get(this.CryptoAPI+ip)
   }
   GetFileintegrityByIP(ip:string){
-    return this.http.get(this.FileintegrityByIPAPI+ip)
+    return this.http.get(this.FileintegrityAPI+ip)
   }
 }
