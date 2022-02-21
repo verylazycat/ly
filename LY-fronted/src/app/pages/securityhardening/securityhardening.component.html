@@ -1,0 +1,50 @@
+<div *ngIf="HardeningData['data']">
+    <a routerLink="/securitystatus/{{HardeningData['data'][0]['ip']}}">Auth</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityboot/{{HardeningData['data'][0]['ip']}}">Boot</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securitycrypto/{{HardeningData['data'][0]['ip']}}">Crypto</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityfileintegrity/{{HardeningData['data'][0]['ip']}}">Fileintegrity</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityfirewall/{{HardeningData['data'][0]['ip']}}">Firewall</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityframework/{{HardeningData['data'][0]['ip']}}">Framework</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityhardening/{{HardeningData['data'][0]['ip']}}">Hardening</a>
+</div>
+  <nz-table nzTemplateMode>
+      <thead>
+        <tr>
+          <th>类目</th>
+          <th>状态</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="HardeningData['data']">
+        <tr>
+          <td>ip</td>
+          <td><nz-tag [nzColor]="'#87d068'">{{ HardeningData['data'][0]['ip'] }}</nz-tag></td>
+        </tr>
+        <tr>
+            <td>生产环境cmake权限</td>
+            <td *ngIf="HardeningData['data'][0]['cmakePermissions']=='----------';else cmakePermissions"><nz-tag [nzColor]="'#87d068'">{{ HardeningData['data'][0]['cmakePermissions'] }}</nz-tag></td>
+            <ng-template #cmakePermissions>
+                <td><nz-tag [nzColor]="'#f50'">{{ HardeningData['data'][0]['cmakePermissions'] }}</nz-tag></td>
+              </ng-template>
+        </tr>
+        <tr>
+            <td>生产环境gcc权限</td>
+            <td *ngIf="HardeningData['data'][0]['cmakePermissions']=='----------';else gccPermissions"><nz-tag [nzColor]="'#87d068'">{{ HardeningData['data'][0]['gccPermissions'] }}</nz-tag></td>
+            <ng-template #gccPermissions>
+                <td><nz-tag [nzColor]="'#f50'">{{ HardeningData['data'][0]['gccPermissions'] }}</nz-tag></td>
+              </ng-template>
+        </tr>
+        <tr>
+            <td>生产环境g++权限</td>
+            <td *ngIf="HardeningData['data'][0]['cmakePermissions']=='----------';else cmakePermissions"><nz-tag [nzColor]="'#87d068'">{{ HardeningData['data'][0]['gppPermissions'] }}</nz-tag></td>
+            <ng-template #gppPermissions>
+                <td><nz-tag [nzColor]="'#f50'">{{ HardeningData['data'][0]['gppPermissions'] }}</nz-tag></td>
+              </ng-template>
+        </tr>
+      </tbody>
+  </nz-table>

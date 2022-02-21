@@ -5,6 +5,9 @@ import { SecuritystatusComponent } from './pages/securitystatus/securitystatus.c
 import { SecuritybootComponent } from './pages/securityboot/securityboot.component';
 import { SecuritycryptoComponent } from './pages/securitycrypto/securitycrypto.component';
 import { SecurityfileintegrityComponent } from './pages/securityfileintegrity/securityfileintegrity.component';
+import { SecurityfirewallComponent } from './pages/securityfirewall/securityfirewall.component';
+import { SecurityframeworkInfoComponent } from './pages/securityframework-info/securityframework-info.component';
+import { SecurityhardeningComponent } from './pages/securityhardening/securityhardening.component';
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/welcome' },
   { path:'status/:ip',component:StatusComponent},
@@ -12,6 +15,9 @@ const routes: Routes = [
   { path: 'securityboot/:ip',component:SecuritybootComponent},
   { path: 'securitycrypto/:ip',component:SecuritycryptoComponent},
   { path: 'securityfileintegrity/:ip',component:SecurityfileintegrityComponent},
+  { path: 'securityfirewall/:ip',component:SecurityfirewallComponent},
+  { path: 'securityframework/:ip',component:SecurityframeworkInfoComponent},
+  { path: 'securityhardening/:ip',component:SecurityhardeningComponent},
   { path: 'welcome', loadChildren: () => import('./pages/welcome/welcome.module').then(m => m.WelcomeModule) }
 ];
 

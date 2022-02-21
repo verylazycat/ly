@@ -11,11 +11,13 @@ export class HttpClientServiceService {
   public BootAPI = this.host + "api/BootInfo/"
   public CryptoAPI = this.host + "api/Cryptoinfo/"
   public FileintegrityAPI = this.host + "api/FileintegrityInfo/"
+  public FirewallAPI = this.host + "api/FirewallInfo/"
+  public FrameworkAPI = this.host + "api/FrameworkInfo/"
+  public HardeningAPI = this.host + "api/HardeningInfo/"
   constructor(
     public http: HttpClient
     ) { }
   GetBaseInfo(){
-    // return this.http.jsonp(this.BaseInfoApi,'callback')
     return this.http.get(this.BaseInfoApi);
   }
   GetBaseInfoByIP(ip:string){
@@ -33,5 +35,14 @@ export class HttpClientServiceService {
   }
   GetFileintegrityByIP(ip:string){
     return this.http.get(this.FileintegrityAPI+ip)
+  }
+  GetFirewallByIP(ip:string){
+    return this.http.get(this.FirewallAPI+ip)
+  }
+  GetFrameworkByIP(ip:string){
+    return this.http.get(this.FrameworkAPI+ip)
+  }
+  GetHardeningByIP(ip:string){
+    return this.http.get(this.HardeningAPI+ip)
   }
 }

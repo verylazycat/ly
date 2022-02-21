@@ -22,6 +22,9 @@ import { SecuritybootComponent } from './pages/securityboot/securityboot.compone
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { SecuritycryptoComponent } from './pages/securitycrypto/securitycrypto.component';
 import { SecurityfileintegrityComponent } from './pages/securityfileintegrity/securityfileintegrity.component';
+import { SecurityfirewallComponent } from './pages/securityfirewall/securityfirewall.component';
+import { SecurityframeworkInfoComponent } from './pages/securityframework-info/securityframework-info.component';
+import { SecurityhardeningComponent } from './pages/securityhardening/securityhardening.component';
 registerLocaleData(zh);
 
 @NgModule({
@@ -31,7 +34,10 @@ registerLocaleData(zh);
     SecuritystatusComponent,
     SecuritybootComponent,
     SecuritycryptoComponent,
-    SecurityfileintegrityComponent
+    SecurityfileintegrityComponent,
+    SecurityfirewallComponent,
+    SecurityframeworkInfoComponent,
+    SecurityhardeningComponent
   ],
   imports: [
     BrowserModule,

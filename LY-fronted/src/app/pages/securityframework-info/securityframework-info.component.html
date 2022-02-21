@@ -1,0 +1,33 @@
+<div *ngIf="FrameworkData['data']">
+    <a routerLink="/securitystatus/{{FrameworkData['data'][0]['ip']}}">Auth</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityboot/{{FrameworkData['data'][0]['ip']}}">Boot</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securitycrypto/{{FrameworkData['data'][0]['ip']}}">Crypto</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityfileintegrity/{{FrameworkData['data'][0]['ip']}}">Fileintegrity</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityfirewall/{{FrameworkData['data'][0]['ip']}}">Firewall</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityframework/{{FrameworkData['data'][0]['ip']}}">Framework</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityhardening/{{FrameworkData['data'][0]['ip']}}">Hardening</a>
+</div>
+  <nz-table nzTemplateMode>
+      <thead>
+        <tr>
+          <th>类目</th>
+          <th>状态</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="FrameworkData['data']">
+        <tr>
+          <td>ip</td>
+          <td><nz-tag [nzColor]="'#87d068'">{{ FrameworkData['data'][0]['ip'] }}</nz-tag></td>
+        </tr>
+        <tr>
+            <td>apparmor状态</td>
+            <td><textarea nz-input placeholder="{{ FrameworkData['data'][0]['apparmorStatus']}}" [disabled]="true" ></textarea></td>
+        </tr>
+      </tbody>
+  </nz-table>
