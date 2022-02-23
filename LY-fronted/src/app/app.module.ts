@@ -25,6 +25,9 @@ import { SecurityfileintegrityComponent } from './pages/securityfileintegrity/se
 import { SecurityfirewallComponent } from './pages/securityfirewall/securityfirewall.component';
 import { SecurityframeworkInfoComponent } from './pages/securityframework-info/securityframework-info.component';
 import { SecurityhardeningComponent } from './pages/securityhardening/securityhardening.component';
+import { SecuritykernelComponent } from './pages/securitykernel/securitykernel.component';
+import { SecurityloggingComponent } from './pages/securitylogging/securitylogging.component';
+import { SecuritynameserversComponent } from './pages/securitynameservers/securitynameservers.component';
 registerLocaleData(zh);
 
 @NgModule({
@@ -37,7 +40,10 @@ registerLocaleData(zh);
     SecurityfileintegrityComponent,
     SecurityfirewallComponent,
     SecurityframeworkInfoComponent,
-    SecurityhardeningComponent
+    SecurityhardeningComponent,
+    SecuritykernelComponent,
+    SecurityloggingComponent,
+    SecuritynameserversComponent
   ],
   imports: [
     BrowserModule,

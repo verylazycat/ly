@@ -14,6 +14,9 @@ export class HttpClientServiceService {
   public FirewallAPI = this.host + "api/FirewallInfo/"
   public FrameworkAPI = this.host + "api/FrameworkInfo/"
   public HardeningAPI = this.host + "api/HardeningInfo/"
+  public kernelAPI = this.host + "api/KernelInfo/"
+  public LoggingAPI = this.host + "api/LoggingInfo/"
+  public NameserversAPI = this.host + "api/NameserversInfo/"
   constructor(
     public http: HttpClient
     ) { }
@@ -44,5 +47,14 @@ export class HttpClientServiceService {
   }
   GetHardeningByIP(ip:string){
     return this.http.get(this.HardeningAPI+ip)
+  }
+  GetKernelByIP(ip:string){
+    return this.http.get(this.kernelAPI+ip)
+  }
+  GetLoggingByIP(ip:string){
+    return this.http.get(this.LoggingAPI+ip)
+  }
+  GetNameserversByIP(ip:string){
+    return this.http.get(this.NameserversAPI+ip)
   }
 }

@@ -12,8 +12,14 @@
     <a routerLink="/securityframework/{{FirewallData['data'][0]['ip']}}">Framework</a>
     <i nz-icon nzType="more" nzTheme="outline"></i>
     <a routerLink="/securityhardening/{{FirewallData['data'][0]['ip']}}">Hardening</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securitykernel/{{FirewallData['data'][0]['ip']}}">kernel</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securitylogging/{{FirewallData['data'][0]['ip']}}">Logging</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securitynameservers/{{FirewallData['data'][0]['ip']}}">Nameservers</a>
 
-  </div>
+</div>
   <nz-table nzTemplateMode>
       <thead>
         <tr>
