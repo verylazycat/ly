@@ -17,6 +17,11 @@ export class HttpClientServiceService {
   public kernelAPI = this.host + "api/KernelInfo/"
   public LoggingAPI = this.host + "api/LoggingInfo/"
   public NameserversAPI = this.host + "api/NameserversInfo/"
+  public NetworkingAPI = this.host + "api/NetworkingInfo/"
+  public PrintingAPI = this.host + "api/PrintingInfo/"
+  public ProcessesAPI = this.host + "api/ProcessesInfo/"
+  public SquidAPI = this.host + "api/SquidInfo/"
+  public SshAPI = this.host + "api/SshInfo/"
   constructor(
     public http: HttpClient
     ) { }
@@ -56,5 +61,20 @@ export class HttpClientServiceService {
   }
   GetNameserversByIP(ip:string){
     return this.http.get(this.NameserversAPI+ip)
+  }
+  GetNetworkingByIP(ip:string){
+    return this.http.get(this.NetworkingAPI+ip)
+  }
+  GetPrintingByIP(ip:string){
+    return this.http.get(this.PrintingAPI+ip)
+  }
+  GetProcessesByIP(ip:string){
+    return this.http.get(this.ProcessesAPI+ip)
+  }
+  GetSquidByIP(ip:string){
+    return this.http.get(this.SquidAPI+ip)
+  }
+  GetSshByIP(ip:string){
+    return this.http.get(this.SshAPI+ip)
   }
 }

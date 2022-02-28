@@ -1,0 +1,60 @@
+<div *ngIf="ProcessesData['data']">
+    <a routerLink="/securitystatus/{{ProcessesData['data'][0]['ip']}}">Auth</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityboot/{{ProcessesData['data'][0]['ip']}}">Boot</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securitycrypto/{{ProcessesData['data'][0]['ip']}}">Crypto</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityfileintegrity/{{ProcessesData['data'][0]['ip']}}">Fileintegrity</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityfirewall/{{ProcessesData['data'][0]['ip']}}">Firewall</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityframework/{{ProcessesData['data'][0]['ip']}}">Framework</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityhardening/{{ProcessesData['data'][0]['ip']}}">Hardening</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securitykernel/{{ProcessesData['data'][0]['ip']}}">kernel</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securitylogging/{{ProcessesData['data'][0]['ip']}}">Logging</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securitynameservers/{{ProcessesData['data'][0]['ip']}}">Nameservers</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securitynetworking/{{ProcessesData['data'][0]['ip']}}">Networking</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityprinting/{{ProcessesData['data'][0]['ip']}}">Printing</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityProcessesInfo/{{ProcessesData['data'][0]['ip']}}">Processes</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securitySquid/{{ProcessesData['data'][0]['ip']}}">Squid</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securitySsh/{{ProcessesData['data'][0]['ip']}}">Ssh</a>
+  
+</div>
+  <nz-table nzTemplateMode>
+      <thead>
+        <tr>
+          <th>类目</th>
+          <th>状态</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="ProcessesData['data']">
+        <tr>
+          <td>ip</td>
+          <td><nz-tag [nzColor]="'#87d068'">{{ ProcessesData['data'][0]['ip'] }}</nz-tag></td>
+        </tr>
+        <tr>
+            <td>僵尸进程数量</td>
+            <td *ngIf="ProcessesData['data'][0]['zombie']=='0';else zombie"><nz-tag [nzColor]="'#87d068'">0</nz-tag></td>
+            <ng-template #zombie>
+              <td><nz-tag [nzColor]="'#f50'">{{ ProcessesData['data'][0]['zombie'] }}</nz-tag></td>
+            </ng-template>
+        </tr>
+        <tr>
+            <td>僵尸进程pid</td>
+            <td *ngIf="ProcessesData['data'][0]['zombiePid']=='null';else zombiePid"><nz-tag [nzColor]="'#87d068'">无僵尸进程</nz-tag></td>
+            <ng-template #zombiePid>
+              <td><nz-tag [nzColor]="'#f50'">{{ ProcessesData['data'][0]['zombiePid'] }}</nz-tag></td>
+            </ng-template>
+        </tr>
+      </tbody>
+  </nz-table>

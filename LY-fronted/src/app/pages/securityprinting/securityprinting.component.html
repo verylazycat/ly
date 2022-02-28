@@ -1,0 +1,74 @@
+<div *ngIf="PrintingData['data']">
+    <a routerLink="/securitystatus/{{PrintingData['data'][0]['ip']}}">Auth</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityboot/{{PrintingData['data'][0]['ip']}}">Boot</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securitycrypto/{{PrintingData['data'][0]['ip']}}">Crypto</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityfileintegrity/{{PrintingData['data'][0]['ip']}}">Fileintegrity</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityfirewall/{{PrintingData['data'][0]['ip']}}">Firewall</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityframework/{{PrintingData['data'][0]['ip']}}">Framework</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityhardening/{{PrintingData['data'][0]['ip']}}">Hardening</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securitykernel/{{PrintingData['data'][0]['ip']}}">kernel</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securitylogging/{{PrintingData['data'][0]['ip']}}">Logging</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securitynameservers/{{PrintingData['data'][0]['ip']}}">Nameservers</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securitynetworking/{{PrintingData['data'][0]['ip']}}">Networking</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityprinting/{{PrintingData['data'][0]['ip']}}">Printing</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityProcessesInfo/{{PrintingData['data'][0]['ip']}}">Processes</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securitySquid/{{PrintingData['data'][0]['ip']}}">Squid</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securitySsh/{{PrintingData['data'][0]['ip']}}">Ssh</a>
+  
+  </div>
+  <nz-table nzTemplateMode>
+      <thead>
+        <tr>
+          <th>类目</th>
+          <th>状态</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="PrintingData['data']">
+        <tr>
+          <td>ip</td>
+          <td><nz-tag [nzColor]="'#87d068'">{{ PrintingData['data'][0]['ip'] }}</nz-tag></td>
+        </tr>
+        <tr>
+            <td>CUPS权限是否安全</td>
+            <td *ngIf="PrintingData['data'][0]['cupspermissionsecurity']=='1';else cupspermissionsecurity"><nz-tag [nzColor]="'#87d068'">安全</nz-tag></td>
+            <ng-template #cupspermissionsecurity>
+              <td><nz-tag [nzColor]="'#f50'">不安全</nz-tag></td>
+            </ng-template>
+        </tr>
+        <tr>
+            <td>CUPS是否开启远程</td>
+            <td *ngIf="PrintingData['data'][0]['remote']=='1';else remote"><nz-tag [nzColor]="'#87d068'">已启动</nz-tag></td>
+            <ng-template #remote>
+              <td><nz-tag [nzColor]="'#f50'">禁止</nz-tag></td>
+            </ng-template>
+        </tr>
+        <tr>
+            <td>CUPS配置是否安全</td>
+            <td *ngIf="PrintingData['data'][0]['safeconfiguration']=='1';else safeconfiguration"><nz-tag [nzColor]="'#87d068'">安全</nz-tag></td>
+            <ng-template #safeconfiguration>
+              <td><nz-tag [nzColor]="'#f50'">不安全</nz-tag></td>
+            </ng-template>
+        </tr>
+        <tr>
+            <td>WebInterface</td>
+            <td *ngIf="PrintingData['data'][0]['webinterface']=='NO';else webinterface"><nz-tag [nzColor]="'#87d068'">{{ PrintingData['data'][0]['webinterface'] }}</nz-tag></td>
+            <ng-template #webinterface>
+              <td><nz-tag [nzColor]="'#f50'">{{ PrintingData['data'][0]['webinterface'] }}</nz-tag></td>
+            </ng-template>
+        </tr>
+      </tbody>
+  </nz-table>

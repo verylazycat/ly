@@ -1,0 +1,98 @@
+<div *ngIf="NetworkingData['data']">
+    <a routerLink="/securitystatus/{{NetworkingData['data'][0]['ip']}}">Auth</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityboot/{{NetworkingData['data'][0]['ip']}}">Boot</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securitycrypto/{{NetworkingData['data'][0]['ip']}}">Crypto</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityfileintegrity/{{NetworkingData['data'][0]['ip']}}">Fileintegrity</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityfirewall/{{NetworkingData['data'][0]['ip']}}">Firewall</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityframework/{{NetworkingData['data'][0]['ip']}}">Framework</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityhardening/{{NetworkingData['data'][0]['ip']}}">Hardening</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securitykernel/{{NetworkingData['data'][0]['ip']}}">kernel</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securitylogging/{{NetworkingData['data'][0]['ip']}}">Logging</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securitynameservers/{{NetworkingData['data'][0]['ip']}}">Nameservers</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securitynetworking/{{NetworkingData['data'][0]['ip']}}">Networking</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityprinting/{{NetworkingData['data'][0]['ip']}}">Printing</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityProcessesInfo/{{NetworkingData['data'][0]['ip']}}">Processes</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securitySquid/{{NetworkingData['data'][0]['ip']}}">Squid</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securitySsh/{{NetworkingData['data'][0]['ip']}}">Ssh</a>
+  
+  </div>
+  <nz-table nzTemplateMode>
+      <thead>
+        <tr>
+          <th>类目</th>
+          <th>状态</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="NetworkingData['data']">
+        <tr>
+          <td>ip</td>
+          <td><nz-tag [nzColor]="'#87d068'">{{ NetworkingData['data'][0]['ip'] }}</nz-tag></td>
+        </tr>
+        <tr>
+            <td>域名解析</td>
+            <td><textarea nz-input placeholder="{{ NetworkingData['data'][0]['ipDomain']}}" [disabled]="true" ></textarea></td>
+        </tr>
+        <tr>
+            <td>arp缓存</td>
+            <td><textarea nz-input placeholder="{{ NetworkingData['data'][0]['arpInfo']}}" [disabled]="true" ></textarea></td>
+        </tr>
+        <tr>
+            <td>网卡信息</td>
+            <td><textarea nz-input placeholder="{{ NetworkingData['data'][0]['nicstatus']}}" [disabled]="true" ></textarea></td>
+        </tr>
+        <tr>
+            <td>tcpStateSynSent</td>
+            <td><textarea nz-input placeholder="{{ NetworkingData['data'][0]['tcpStateSynSent']}}" [disabled]="true" ></textarea></td>
+        </tr>
+        <tr>
+            <td>tcpStateSynRecv</td>
+            <td><textarea nz-input placeholder="{{ NetworkingData['data'][0]['tcpStateSynRecv']}}" [disabled]="true" ></textarea></td>
+        </tr>
+        <tr>
+            <td>tcpStateListening</td>
+            <td><textarea nz-input placeholder="{{ NetworkingData['data'][0]['tcpStateListening']}}" [disabled]="true" ></textarea></td>
+        </tr>
+        <tr>
+            <td>tcpStateEstablished</td>
+            <td><textarea nz-input placeholder="{{ NetworkingData['data'][0]['tcpStateEstablished']}}" [disabled]="true" ></textarea></td>
+        </tr>
+        <tr>
+            <td>tcpStateFinWaitOne</td>
+            <td><textarea nz-input placeholder="{{ NetworkingData['data'][0]['tcpStateFinWaitOne']}}" [disabled]="true" ></textarea></td>
+        </tr>
+        <tr>
+            <td>tcpStateCloseWait</td>
+            <td><textarea nz-input placeholder="{{ NetworkingData['data'][0]['tcpStateCloseWait']}}" [disabled]="true" ></textarea></td>
+        </tr>
+        <tr>
+            <td>tcpStateFinWaitTwo</td>
+            <td><textarea nz-input placeholder="{{ NetworkingData['data'][0]['tcpStateFinWaitTwo']}}" [disabled]="true" ></textarea></td>
+        </tr>
+        <tr>
+            <td>tcpStateTimeWait</td>
+            <td><textarea nz-input placeholder="{{ NetworkingData['data'][0]['tcpStateTimeWait']}}" [disabled]="true" ></textarea></td>
+        </tr>
+        <tr>
+            <td>tcpStateLastAck</td>
+            <td><textarea nz-input placeholder="{{ NetworkingData['data'][0]['tcpStateLastAck']}}" [disabled]="true" ></textarea></td>
+        </tr>
+        <tr>
+            <td>tcpStateClosing</td>
+            <td><textarea nz-input placeholder="{{ NetworkingData['data'][0]['tcpStateClosing']}}" [disabled]="true" ></textarea></td>
+        </tr>
+      </tbody>
+  </nz-table>

@@ -28,6 +28,11 @@ import { SecurityhardeningComponent } from './pages/securityhardening/securityha
 import { SecuritykernelComponent } from './pages/securitykernel/securitykernel.component';
 import { SecurityloggingComponent } from './pages/securitylogging/securitylogging.component';
 import { SecuritynameserversComponent } from './pages/securitynameservers/securitynameservers.component';
+import { SecuritynetworkingComponent } from './pages/securitynetworking/securitynetworking.component';
+import { SecurityprintingComponent } from './pages/securityprinting/securityprinting.component';
+import { SecurityprocessesComponent } from './pages/securityprocesses/securityprocesses.component';
+import { SecuritysquidComponent } from './pages/securitysquid/securitysquid.component';
+import { SecuritysshComponent } from './pages/securityssh/securityssh.component';
 registerLocaleData(zh);
 
 @NgModule({
@@ -43,7 +48,12 @@ registerLocaleData(zh);
     SecurityhardeningComponent,
     SecuritykernelComponent,
     SecurityloggingComponent,
-    SecuritynameserversComponent
+    SecuritynameserversComponent,
+    SecuritynetworkingComponent,
+    SecurityprintingComponent,
+    SecurityprocessesComponent,
+    SecuritysquidComponent,
+    SecuritysshComponent
   ],
   imports: [
     BrowserModule,

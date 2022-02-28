@@ -1,19 +1,18 @@
 package com.base.entity;
 
-import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.TableField;
+import java.io.Serializable;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import java.io.Serializable;
-
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author admin233
- * @since 2022-01-28
+ * @since 2022-02-25
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -38,11 +37,11 @@ public class Networking implements Serializable {
 
     private String tcpStateEstablished;
 
-    private String tcpStateFinWait1;
+    private String tcpStateFinWaitOne;
 
     private String tcpStateCloseWait;
 
-    private String tcpStateFinWait2;
+    private String tcpStateFinWaitTwo;
 
     private String tcpStateTimeWait;
 

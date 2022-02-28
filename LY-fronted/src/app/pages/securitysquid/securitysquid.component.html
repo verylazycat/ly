@@ -1,0 +1,63 @@
+<div *ngIf="SquidData['data']">
+    <a routerLink="/securitystatus/{{SquidData['data'][0]['ip']}}">Auth</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityboot/{{SquidData['data'][0]['ip']}}">Boot</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securitycrypto/{{SquidData['data'][0]['ip']}}">Crypto</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityfileintegrity/{{SquidData['data'][0]['ip']}}">Fileintegrity</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityfirewall/{{SquidData['data'][0]['ip']}}">Firewall</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityframework/{{SquidData['data'][0]['ip']}}">Framework</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityhardening/{{SquidData['data'][0]['ip']}}">Hardening</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securitykernel/{{SquidData['data'][0]['ip']}}">kernel</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securitylogging/{{SquidData['data'][0]['ip']}}">Logging</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securitynameservers/{{SquidData['data'][0]['ip']}}">Nameservers</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securitynetworking/{{SquidData['data'][0]['ip']}}">Networking</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityprinting/{{SquidData['data'][0]['ip']}}">Printing</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityProcessesInfo/{{SquidData['data'][0]['ip']}}">Processes</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securitySquid/{{SquidData['data'][0]['ip']}}">Squid</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securitySsh/{{SquidData['data'][0]['ip']}}">Ssh</a>
+  
+  
+  </div>
+  <nz-table nzTemplateMode>
+      <thead>
+        <tr>
+          <th>类目</th>
+          <th>状态</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="SquidData['data']">
+        <tr>
+          <td>ip</td>
+          <td><nz-tag [nzColor]="'#87d068'">{{ SquidData['data'][0]['ip'] }}</nz-tag></td>
+        </tr>
+        <tr>
+            <td>Squid权限</td>
+            <td><nz-tag [nzColor]="'#87d068'">{{ SquidData['data'][0]['bit'] }}</nz-tag></td>
+        </tr>
+        <tr>
+            <td>Squid-pid</td>
+            <td><nz-tag [nzColor]="'#87d068'">{{ SquidData['data'][0]['pid'] }}</nz-tag></td>
+        </tr>
+        <tr>
+            <td>Squid-status</td>
+            <td><nz-tag [nzColor]="'#87d068'">{{ SquidData['data'][0]['status'] }}</nz-tag></td>
+        </tr>
+        <tr>
+            <td>Squid-version</td>
+            <td><nz-tag [nzColor]="'#87d068'">{{ SquidData['data'][0]['version'] }}</nz-tag></td>
+        </tr>
+      </tbody>
+  </nz-table>
