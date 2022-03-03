@@ -33,9 +33,11 @@ void Database::CheckNullPass(void){
         spdlog::critical("The mysql password empty");
         logger->critical("The mysql password empty");
         mysql_close(mysql);
+        Utils::updatebyip("LY-core","mydatabase","ismysqlpwempty",1);
     }
     spdlog::info("The mysql password not empty");
     logger->info("The mysql password not empty");
+    Utils::updatebyip("LY-core","mydatabase","ismysqlpwempty",0);
     return;
 }
 //检测是否安装redis
@@ -81,26 +83,32 @@ void Database::CheckDangerousCMD(void){
     if (FLUSHALL){
         spdlog::info("Redis-FLUSHALL is safe");
         logger->info("Redis-FLUSHALL is safe");
+        Utils::updatebyip("LY-core","mydatabase","redisflushall",1);
     }
     else{
         spdlog::critical("Redis-FLUSHALL is not safe");
         logger->critical("Redis-FLUSHALL is not safe");
+        Utils::updatebyip("LY-core","mydatabase","redisflushall",0);
     }
     if (CONFIG){
         spdlog::info("Redis-CONFIG is safe");
         logger->info("Redis-CONFIG is safe");
+        Utils::updatebyip("LY-core","mydatabase","redisconfig",1);
     }
     else{
         spdlog::critical("Redis-CONFIG is not safe");
         logger->critical("Redis-CONFIG is not safe");
+        Utils::updatebyip("LY-core","mydatabase","redisconfig",0);
     }
     if (EVAL){
         spdlog::info("Redis-EVAL is safe");
         logger->info("Redis-EVAL is safe");
+        Utils::updatebyip("LY-core","mydatabase","rediseval",1);
     }
     else{
         spdlog::critical("Redis-EVAL is not safe");
         logger->critical("Redis-EVAL is not safe");
+        Utils::updatebyip("LY-core","mydatabase","rediseval",0);
     }
     return;
 }
@@ -118,12 +126,14 @@ void Database::CheckRedisPass(){
             if(Utils::KMPsearch(line,"# requirepass")){
                 spdlog::critical("Redis does not set a password");
                 logger->critical("Redis does not set a password");
+                Utils::updatebyip("LY-core","mydatabase","redispw",0);
                 return;
             }
         }
     }
     spdlog::info("Redis has set the password");
     logger->info("Redis has set the password");
+    Utils::updatebyip("LY-core","mydatabase","redispw",1);
     return;
 }
 void Database::CheckIntranetAccess(void){
@@ -140,11 +150,13 @@ void Database::CheckIntranetAccess(void){
             if(Utils::KMPsearch(line,"# bind 127.0.0.1")){
                 spdlog::critical("The extranet can access Redis");
                 logger->critical("The extranet can access Redis");
+                Utils::updatebyip("LY-core","mydatabase","extranetredis",1);
                 return;
             }
         }
     }
     spdlog::info("The extranet can not access Redis");
     logger->info("The extranet can not access Redis");
+    Utils::updatebyip("LY-core","mydatabase","extranetredis",0);
     return;
 }

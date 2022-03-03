@@ -1,0 +1,72 @@
+<div *ngIf="WebData['data']">
+    <a routerLink="/securitystatus/{{WebData['data'][0]['ip']}}">Auth</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityboot/{{WebData['data'][0]['ip']}}">Boot</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securitycrypto/{{WebData['data'][0]['ip']}}">Crypto</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityfileintegrity/{{WebData['data'][0]['ip']}}">Fileintegrity</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityfirewall/{{WebData['data'][0]['ip']}}">Firewall</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityframework/{{WebData['data'][0]['ip']}}">Framework</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityhardening/{{WebData['data'][0]['ip']}}">Hardening</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securitykernel/{{WebData['data'][0]['ip']}}">kernel</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securitylogging/{{WebData['data'][0]['ip']}}">Logging</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securitynameservers/{{WebData['data'][0]['ip']}}">Nameservers</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securitynetworking/{{WebData['data'][0]['ip']}}">Networking</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityprinting/{{WebData['data'][0]['ip']}}">Printing</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityProcessesInfo/{{WebData['data'][0]['ip']}}">Processes</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securitySquid/{{WebData['data'][0]['ip']}}">Squid</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securitySsh/{{WebData['data'][0]['ip']}}">Ssh</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityWeb/{{WebData['data'][0]['ip']}}">Web</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityMydatabase/{{WebData['data'][0]['ip']}}">Mydatabase</a>
+
+  
+  </div>
+  <nz-table nzTemplateMode>
+      <thead>
+        <tr>
+          <th>类目</th>
+          <th>状态</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="WebData['data']">
+        <tr>
+          <td>ip</td>
+          <td><nz-tag [nzColor]="'#87d068'">{{ WebData['data'][0]['ip'] }}</nz-tag></td>
+        </tr>
+        <tr>
+            <td>nginx-SSL</td>
+            <td *ngIf="WebData['data'][0]['nginxSsl']=='1';else nginxSsl"><nz-tag [nzColor]="'#87d068'">已启用</nz-tag></td>
+            <ng-template #nginxSsl>
+              <td><nz-tag [nzColor]="'#f50'">未启用</nz-tag></td>
+            </ng-template>
+        </tr>
+        <tr>
+            <td>ngnix-AccessLog</td>
+            <td *ngIf="WebData['data'][0]['ngnixAccessLog']=='1';else ngnixAccessLog"><nz-tag [nzColor]="'#87d068'">已启用</nz-tag></td>
+            <ng-template #ngnixAccessLog>
+              <td><nz-tag [nzColor]="'#f50'">未启用</nz-tag></td>
+            </ng-template>
+        </tr>
+        <tr>
+            <td>ngnix-ErrorLog</td>
+            <td *ngIf="WebData['data'][0]['ngnixErrorLog']=='1';else ngnixErrorLog"><nz-tag [nzColor]="'#87d068'">已启用</nz-tag></td>
+            <ng-template #ngnixErrorLog>
+              <td><nz-tag [nzColor]="'#f50'">未启用</nz-tag></td>
+            </ng-template>
+        </tr>
+      </tbody>
+  </nz-table>

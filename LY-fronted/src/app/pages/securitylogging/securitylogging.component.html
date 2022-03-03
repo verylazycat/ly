@@ -28,7 +28,11 @@
     <a routerLink="/securitySquid/{{LoggingData['data'][0]['ip']}}">Squid</a>
     <i nz-icon nzType="more" nzTheme="outline"></i>
     <a routerLink="/securitySsh/{{LoggingData['data'][0]['ip']}}">Ssh</a>
-
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityWeb/{{LoggingData['data'][0]['ip']}}">Web</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityMydatabase/{{LoggingData['data'][0]['ip']}}">Mydatabase</a>
+  
   </div>
   <nz-table nzTemplateMode>
       <thead>

@@ -33,6 +33,8 @@ import { SecurityprintingComponent } from './pages/securityprinting/securityprin
 import { SecurityprocessesComponent } from './pages/securityprocesses/securityprocesses.component';
 import { SecuritysquidComponent } from './pages/securitysquid/securitysquid.component';
 import { SecuritysshComponent } from './pages/securityssh/securityssh.component';
+import { SecuritywebComponent } from './pages/securityweb/securityweb.component';
+import { SecuritymydatabaseComponent } from './pages/securitymydatabase/securitymydatabase.component';
 registerLocaleData(zh);
 
 @NgModule({
@@ -53,7 +55,9 @@ registerLocaleData(zh);
     SecurityprintingComponent,
     SecurityprocessesComponent,
     SecuritysquidComponent,
-    SecuritysshComponent
+    SecuritysshComponent,
+    SecuritywebComponent,
+    SecuritymydatabaseComponent
   ],
   imports: [
     BrowserModule,

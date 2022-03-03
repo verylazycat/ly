@@ -16,6 +16,8 @@ import { SecurityprintingComponent } from './pages/securityprinting/securityprin
 import { SecurityprocessesComponent } from './pages/securityprocesses/securityprocesses.component';
 import { SecuritysquidComponent } from './pages/securitysquid/securitysquid.component';
 import { SecuritysshComponent } from './pages/securityssh/securityssh.component';
+import { SecuritywebComponent } from './pages/securityweb/securityweb.component';
+import { SecuritymydatabaseComponent } from './pages/securitymydatabase/securitymydatabase.component';
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/welcome' },
   { path:'status/:ip',component:StatusComponent},
@@ -34,6 +36,8 @@ const routes: Routes = [
   { path: 'securityProcessesInfo/:ip',component:SecurityprocessesComponent},
   { path: 'securitySquid/:ip',component:SecuritysquidComponent},
   { path: 'securitySsh/:ip',component:SecuritysshComponent},
+  { path: 'securityWeb/:ip',component:SecuritywebComponent},
+  { path: 'securityMydatabase/:ip',component:SecuritymydatabaseComponent},
   { path: 'welcome', loadChildren: () => import('./pages/welcome/welcome.module').then(m => m.WelcomeModule) }
 ];
 

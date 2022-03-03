@@ -1,0 +1,92 @@
+<div *ngIf="MydatabaseData['data']">
+    <a routerLink="/securitystatus/{{MydatabaseData['data'][0]['ip']}}">Auth</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityboot/{{MydatabaseData['data'][0]['ip']}}">Boot</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securitycrypto/{{MydatabaseData['data'][0]['ip']}}">Crypto</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityfileintegrity/{{MydatabaseData['data'][0]['ip']}}">Fileintegrity</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityfirewall/{{MydatabaseData['data'][0]['ip']}}">Firewall</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityframework/{{MydatabaseData['data'][0]['ip']}}">Framework</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityhardening/{{MydatabaseData['data'][0]['ip']}}">Hardening</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securitykernel/{{MydatabaseData['data'][0]['ip']}}">kernel</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securitylogging/{{MydatabaseData['data'][0]['ip']}}">Logging</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securitynameservers/{{MydatabaseData['data'][0]['ip']}}">Nameservers</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securitynetworking/{{MydatabaseData['data'][0]['ip']}}">Networking</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityprinting/{{MydatabaseData['data'][0]['ip']}}">Printing</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityProcessesInfo/{{MydatabaseData['data'][0]['ip']}}">Processes</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securitySquid/{{MydatabaseData['data'][0]['ip']}}">Squid</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securitySsh/{{MydatabaseData['data'][0]['ip']}}">Ssh</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityWeb/{{MydatabaseData['data'][0]['ip']}}">Web</a>
+    <i nz-icon nzType="more" nzTheme="outline"></i>
+    <a routerLink="/securityMydatabase/{{MydatabaseData['data'][0]['ip']}}">Mydatabase</a>
+
+  </div>
+  <nz-table nzTemplateMode>
+      <thead>
+        <tr>
+          <th>类目</th>
+          <th>状态</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="MydatabaseData['data']">
+        <tr>
+          <td>ip</td>
+          <td><nz-tag [nzColor]="'#87d068'">{{ MydatabaseData['data'][0]['ip'] }}</nz-tag></td>
+        </tr>
+        <tr>
+          <td>mysql密码是否为空</td>
+          <td *ngIf="MydatabaseData['data'][0]['ismysqlpwempty']=='0';else ismysqlpwempty"><nz-tag [nzColor]="'#87d068'">不为空</nz-tag></td>
+          <ng-template #ismysqlpwempty>
+            <td><nz-tag [nzColor]="'#f50'">为空</nz-tag></td>
+          </ng-template>
+        </tr>
+        <tr>
+            <td>redis密码是否为空</td>
+            <td *ngIf="MydatabaseData['data'][0]['redispw']=='0';else redispw"><nz-tag [nzColor]="'#87d068'">不为空</nz-tag></td>
+            <ng-template #redispw>
+              <td><nz-tag [nzColor]="'#f50'">为空</nz-tag></td>
+            </ng-template>
+          </tr>
+        <tr>
+            <td>redis配置是否安全</td>
+            <td *ngIf="MydatabaseData['data'][0]['redisconfig']=='1';else redisconfig"><nz-tag [nzColor]="'#87d068'">安全</nz-tag></td>
+            <ng-template #redisconfig>
+              <td><nz-tag [nzColor]="'#f50'">不安全</nz-tag></td>
+            </ng-template>
+          </tr>
+          <tr>
+            <td>redis-eval</td>
+            <td *ngIf="MydatabaseData['data'][0]['rediseval']=='1';else rediseval"><nz-tag [nzColor]="'#87d068'">安全</nz-tag></td>
+            <ng-template #rediseval>
+              <td><nz-tag [nzColor]="'#f50'">不安全</nz-tag></td>
+            </ng-template>
+          </tr>
+          <tr>
+            <td>redis-flushall</td>
+            <td *ngIf="MydatabaseData['data'][0]['redisflushall']=='1';else redisflushall"><nz-tag [nzColor]="'#87d068'">安全</nz-tag></td>
+            <ng-template #redisflushall>
+              <td><nz-tag [nzColor]="'#f50'">不安全</nz-tag></td>
+            </ng-template>
+          </tr>
+          <tr>
+            <td>redis-extranet</td>
+            <td *ngIf="MydatabaseData['data'][0]['extranetredis']=='0';else extranetredis"><nz-tag [nzColor]="'#87d068'">安全</nz-tag></td>
+            <ng-template #extranetredis>
+              <td><nz-tag [nzColor]="'#f50'">不安全</nz-tag></td>
+            </ng-template>
+          </tr>
+      </tbody>
+  </nz-table>

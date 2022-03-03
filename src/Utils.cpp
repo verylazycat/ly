@@ -134,8 +134,8 @@ void Utils::updatebyip(const char *db_name,string table_name,string column,strin
     const char *db_user = "admin233";
     const char *db_pass = "admin233";
     const int db_port = 3306;
-    // enp3s0f1  wlo1  xdroid0
-    string localip = get_local_ip("xdroid0");
+    // enp3s0f1  wlo1  
+    string localip = get_local_ip("enp3s0f1");
     MYSQL *mysql = mysql_init(NULL);
     if (mysql == NULL){
         spdlog::critical("mysql error:{}",mysql_error(mysql));
@@ -217,7 +217,7 @@ void Utils::updatebyip(const char *db_name,string table_name,string column,int v
     const char *db_pass = "admin233";
     const int db_port = 3306;
     // enp3s0f1  wlo1 xdroid0
-    string localip = get_local_ip("xdroid0");
+    string localip = get_local_ip("enp3s0f1");
     MYSQL *mysql = mysql_init(NULL);
     if (mysql == NULL){
         spdlog::critical("mysql error:{}",mysql_error(mysql));

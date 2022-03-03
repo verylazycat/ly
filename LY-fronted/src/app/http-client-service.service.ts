@@ -22,6 +22,8 @@ export class HttpClientServiceService {
   public ProcessesAPI = this.host + "api/ProcessesInfo/"
   public SquidAPI = this.host + "api/SquidInfo/"
   public SshAPI = this.host + "api/SshInfo/"
+  public WebAPI = this.host + "api/WebInfo/"
+  public MydatabaseAPI = this.host + "api/MydatabaseInfo/"
   constructor(
     public http: HttpClient
     ) { }
@@ -76,5 +78,11 @@ export class HttpClientServiceService {
   }
   GetSshByIP(ip:string){
     return this.http.get(this.SshAPI+ip)
+  }
+  GetWebByIP(ip:string){
+    return this.http.get(this.WebAPI+ip)
+  }
+  GetMydatabaseByIP(ip:string){
+    return this.http.get(this.MydatabaseAPI+ip)
   }
 }
