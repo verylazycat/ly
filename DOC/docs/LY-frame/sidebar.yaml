@@ -4,3 +4,8 @@ items:
     items:
     -   label: 数据库详细信息
         file: database.md
+-   label: 架构
+    file: Architecture.md
+    items:
+    -   label: 总体架构
+        file: architecture.md
