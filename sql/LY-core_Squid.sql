@@ -39,7 +39,6 @@ CREATE TABLE `Squid` (
 
 LOCK TABLES `Squid` WRITE;
 /*!40000 ALTER TABLE `Squid` DISABLE KEYS */;
-INSERT INTO `Squid` VALUES ('192.168.1.30',NULL,'   Main PID: 2000 (squid)\n','4.10\n','-rw-r--r--\n'),('192.168.252.1',NULL,'   Main PID: 2000 (squid)\n','4.10\n','-rw-r--r--\n');
 /*!40000 ALTER TABLE `Squid` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-02-08 15:09:59
+-- Dump completed on 2022-03-07 16:12:10

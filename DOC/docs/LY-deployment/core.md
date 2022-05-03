@@ -4,12 +4,6 @@ keywords: 核心部署
 desc: 核心部署
 ---
 
-## 源码下载
-
-```bash
-git clone git@github.com:verylazycat/ly.git
-```
-
 ## 依赖配置
 
 - base
@@ -28,6 +22,33 @@ sudo apt install openssl libssl-dev -y
 
 ```bash
 sudo apt-get install libmysqlclient-dev
+```
+
+- spdlog
+
+```bash
+sudo apt-get install libspdlog-dev
+```
+
+- gflags
+
+```bash
+sudo apt-get install libgflags-dev
+```
+
+## 初始化数据库
+
+- 创建数据库
+
+```sql
+create database LY-core
+```
+
+- 执行sql脚本
+
+```sql
+use LY-core
+source *.sql
 ```
 
 ## 编译
@@ -52,5 +73,11 @@ make -j8
 ```bash
 chmod +x LY
 ./LY
+```
+
+## 帮助
+
+```bash
+./LY --help
 ```
 

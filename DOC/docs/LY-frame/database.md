@@ -4,9 +4,11 @@ keywords: 数据库
 desc: 数据库
 ---
 
-## 数据库信息
+## ER图
 
-## LY-core
+![ER](img/ER.png)
+
+## 数据库信息
 
 ### BaseInfo
 

@@ -1,49 +1,31 @@
 ---
-title: Article title
-keywords: keyword1, keyword2
-desc: description for this article
+title: 调度中心详细设计
+keywords: 调度中心详细设计
+desc: 调度中心详细设计
 ---
 
+## 项目结构
 
-## Add article
-
-* Create markdown file with file name end with `.md` in the directory of this file, e.g. `first.md`
-* Add link in `sidebar.yaml`
-
-```markdown
-items:
--   label: Brief
-    file: README.md
--   label: First
-    file: first.md
+```bash
+➜  LY-control tree -L 1
+.
+├── common
+├── LY-api
+├── LY-consumer
+├── LY-gateway
+├── LY-model
+├── LY-provider
+└── pom.xml
+6 directories, 1 file
 ```
 
-## More example
+- common:定义常用类和方法，如返回值结构，状态码等等
+- LY-api：定义各个模块常用函数接口
+- LY-consumer：服务消费者
+- LY-gateway：网关服务
+- LY-model：各个模块基本结构
+- LY-provider：服务生产者
 
-More visit: [teedoc.neucrack.com](https://teedoc.neucrack.com/) or [teedoc.github.io](https://teedoc.github.io/)
+## 详细结构
 
-And more example see: [github.com/teedoc/teedoc.github.io](https://github.com/teedoc/teedoc.github.io) and [https://github.com/teedoc/template](https://github.com/teedoc/template) , and [sipeed wiki](https://github.com/sipeed/sipeed_wiki)
-
--------
-
-
-## 添加文章
-
-* 在本文件所在目录创建 markdown 以  `.md` 结尾的文件，比如 `first.md`
-* 在 `sidebar.yaml` 中添加侧边栏链接
-
-```markdown
-items:
--   label: Brief
-    file: README.md
--   label: First
-    file: first.md
-```
-
-## 更多例子
-
-更多请访问: [teedoc.neucrack.com](https://teedoc.neucrack.com/) 或者 [teedoc.github.io](https://teedoc.github.io/)
-
-更多例子访问: [github.com/teedoc/teedoc.github.io](https://github.com/teedoc/teedoc.github.io) 或者 [https://github.com/teedoc/template](https://github.com/teedoc/template) , 或 [sipeed wiki](https://github.com/sipeed/sipeed_wiki)
-
-
+![LY-control](img/LY-control.png)

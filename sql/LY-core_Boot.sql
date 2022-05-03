@@ -39,7 +39,6 @@ CREATE TABLE `Boot` (
 
 LOCK TABLES `Boot` WRITE;
 /*!40000 ALTER TABLE `Boot` DISABLE KEYS */;
-INSERT INTO `Boot` VALUES ('192.168.1.30',0,0,0,'SHELL=/bin/shPATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin17 *	* * *	root    cd / && run-parts --report /etc/cron.hourly25 6	* * *	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily )47 6	* * 7	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.weekly )52 6	1 * *	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.monthly )'),('192.168.252.1',0,0,0,'SHELL=/bin/shPATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin17 *	* * *	root    cd / && run-parts --report /etc/cron.hourly25 6	* * *	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily )47 6	* * 7	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.weekly )52 6	1 * *	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.monthly )');
 /*!40000 ALTER TABLE `Boot` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-02-08 15:09:59
+-- Dump completed on 2022-03-07 16:12:10

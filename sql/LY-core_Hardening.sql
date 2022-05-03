@@ -38,7 +38,6 @@ CREATE TABLE `Hardening` (
 
 LOCK TABLES `Hardening` WRITE;
 /*!40000 ALTER TABLE `Hardening` DISABLE KEYS */;
-INSERT INTO `Hardening` VALUES ('192.168.1.30','lrwxrwxrwx\n','-rwxr-xr-x\n','lrwxrwxrwx\n'),('192.168.252.1','lrwxrwxrwx\n','-rwxr-xr-x\n','lrwxrwxrwx\n');
 /*!40000 ALTER TABLE `Hardening` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-02-08 15:09:59
+-- Dump completed on 2022-03-07 16:12:10

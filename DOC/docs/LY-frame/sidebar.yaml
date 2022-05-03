@@ -9,3 +9,9 @@ items:
     items:
     -   label: 总体架构
         file: architecture.md
+    -   label: 核心架构
+        file: corearchitecture.md
+    -   label: 前端架构
+        file: frontedarchitecture.md
+    -   label: dubbo架构
+        file: dubbo.md

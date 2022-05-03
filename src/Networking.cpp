@@ -42,7 +42,7 @@ void NetWorking::ss(void){
     //ss -tan state syn-sent
     const char *cmd1 = "ss -tan state syn-sent";
     // core dump !!!!
-    char res[2048];
+    char res[10240];
     bzero(res,sizeof(res));
     Utils::executeCMD(cmd1,res);
     spdlog::info("tcp-state-syn_sent:\n{}",res);

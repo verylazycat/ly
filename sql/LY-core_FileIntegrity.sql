@@ -41,7 +41,6 @@ CREATE TABLE `FileIntegrity` (
 
 LOCK TABLES `FileIntegrity` WRITE;
 /*!40000 ALTER TABLE `FileIntegrity` DISABLE KEYS */;
-INSERT INTO `FileIntegrity` VALUES ('192.168.1.30','文件系统        容量  已用  可用 已用% 挂载点\n/dev/sda2       234G  172G   51G   78% /\n','文件系统        容量  已用  可用 已用% 挂载点\n/dev/sda2       234G  172G   51G   78% /\n',1,'/tmp/segv_output.mvKOVQ\n/tmp/sunlogin_rundaemon.log\n/tmp/tmpjn621jeo.svg\n/tmp/mysql-workbench-4177/4b373146-7ff6-11ec-93fc-a91676d39bcf.db\n/tmp/mysql-workbench-4177/86176bce-7ffb-11ec-93fc-a91676d39bcf.db\n/tmp/mysql-workbench-4177/4b373142-7ff6-11ec-93fc-a91676d39bcf.db\n/tmp/mysql-workbench-4177/4b373143-7ff6-11ec-93fc-a91676d39bcf.db\n/tmp/mysql-workbench-4177/4b373144-7ff6-11ec-93fc-a91676d39bcf.db\n/tmp/winstone8395088055061876333.jar\n/tmp/hsperfdata_root/2030\n/tmp/config-err-FHu1t7\n/tmp/sogoupinyin-qimpanel-watchdog-1000:0.pid\n',NULL,1),('192.168.252.1','文件系统        容量  已用  可用 已用% 挂载点\n/dev/sda2       234G  172G   51G   78% /\n','文件系统        容量  已用  可用 已用% 挂载点\n/dev/sda2       234G  172G   51G   78% /\n',1,'/tmp/hsperfdata_admin233/18539\n/tmp/loose/6142509188972423790/.browse.VC.db\n/tmp/sunlogin_rundaemon.log\n/tmp/tmpjn621jeo.svg\n/tmp/mysql-workbench-4177/68707920-7ffc-11ec-93fc-a91676d39bcf.db\n/tmp/setup.sh.8Mud7fGPAB\n/tmp/winstone8395088055061876333.jar\n/tmp/hsperfdata_root/2030\n/tmp/config-err-FHu1t7\n/tmp/sogoupinyin-qimpanel-watchdog-1000:0.pid\n/tmp/librocksdbjni7152303809748140649.so\n',NULL,1);
 /*!40000 ALTER TABLE `FileIntegrity` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-02-08 15:09:59
+-- Dump completed on 2022-03-07 16:12:10

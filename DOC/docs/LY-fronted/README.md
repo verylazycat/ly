@@ -1,49 +1,69 @@
 ---
-title: Article title
-keywords: keyword1, keyword2
-desc: description for this article
+title: 前端设计
+keywords: 前端设计
+desc: 前端设计
 ---
 
+## 项目结构
 
-## Add article
-
-* Create markdown file with file name end with `.md` in the directory of this file, e.g. `first.md`
-* Add link in `sidebar.yaml`
-
-```markdown
-items:
--   label: Brief
-    file: README.md
--   label: First
-    file: first.md
+```bash
+➜  src git:(master) ✗ tree -L 3
+.
+├── app
+│   ├── app.component.css
+│   ├── app.component.html
+│   ├── app.component.spec.ts
+│   ├── app.component.ts
+│   ├── app.module.ts
+│   ├── app-routing.module.ts
+│   ├── http-client-service.service.spec.ts
+│   ├── http-client-service.service.ts
+│   ├── icons-provider.module.ts
+│   └── pages
+│       ├── securityboot
+│       ├── securitycrypto
+│       ├── securityfileintegrity
+│       ├── securityfirewall
+│       ├── securityframework-info
+│       ├── securityhardening
+│       ├── securitykernel
+│       ├── securitylogging
+│       ├── securitymydatabase
+│       ├── securitynameservers
+│       ├── securitynetworking
+│       ├── securityprinting
+│       ├── securityprocesses
+│       ├── securitysquid
+│       ├── securityssh
+│       ├── securitystatus
+│       ├── securityweb
+│       ├── status
+│       └── welcome
+├── assets
+│   ├── Auth.json
+│   ├── BaseInfo.json
+│   ├── bg-pc.png
+│   ├── Boot.json
+│   ├── Crypto.json
+│   ├── Fileintegrity.json
+│   └── Firewall.json
+├── Auth.json
+├── environments
+│   ├── environment.prod.ts
+│   └── environment.ts
+├── favicon.ico
+├── index.html
+├── main.ts
+├── polyfills.ts
+├── styles.css
+├── test.ts
+└── theme.less
+23 directories, 26 files
 ```
 
-## More example
-
-More visit: [teedoc.neucrack.com](https://teedoc.neucrack.com/) or [teedoc.github.io](https://teedoc.github.io/)
-
-And more example see: [github.com/teedoc/teedoc.github.io](https://github.com/teedoc/teedoc.github.io) and [https://github.com/teedoc/template](https://github.com/teedoc/template) , and [sipeed wiki](https://github.com/sipeed/sipeed_wiki)
-
--------
-
-
-## 添加文章
-
-* 在本文件所在目录创建 markdown 以  `.md` 结尾的文件，比如 `first.md`
-* 在 `sidebar.yaml` 中添加侧边栏链接
-
-```markdown
-items:
--   label: Brief
-    file: README.md
--   label: First
-    file: first.md
-```
-
-## 更多例子
-
-更多请访问: [teedoc.neucrack.com](https://teedoc.neucrack.com/) 或者 [teedoc.github.io](https://teedoc.github.io/)
-
-更多例子访问: [github.com/teedoc/teedoc.github.io](https://github.com/teedoc/teedoc.github.io) 或者 [https://github.com/teedoc/template](https://github.com/teedoc/template) , 或 [sipeed wiki](https://github.com/sipeed/sipeed_wiki)
-
+- app.*:项目组织核心
+- app-routing：路由模块
+- http-client-service.service.ts：网络服务
+- pages/*:各个页面模块
+- assets/*：资源模块
 
